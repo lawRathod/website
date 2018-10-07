@@ -1,82 +1,44 @@
 body {
-  background: #8fcffc;
+  background: black;
   text-align: center;
+  color: white;
 }
-.dabba {
-  width: 265px;
-  margin-top: 19em;
-  height: 19em;
-}
-.line {
-  overflow: hidden;
-  margin: 0 auto;
-  white-space: nowrap;
-  border-right: 2px solid;
-  font-family: 'Gamja Flower', cursive;
-  font-size: 40px;
-  animation: blinker 750ms ease-out infinite,
-    typewriter 3.5s linear;
-}
-@keyframes blinker{
-  from {border-right-color: black;}
-  to {border-right-color: transparent;}
-}
-@keyframes typewriter{
-  0%{width:0%;}
-  90%{width:100%;}
-  100%{width:0%;}
-}
-li {
-  margin-right: 40px;
-}
-
-#gallery {
-  scroll-snap-type: x mandatory;
-  overflow-x: scroll;
-  display: flex;
-}
-.jumbotron {
-  background: white;
-}
-
-#gallery img {
-   scroll-snap-align: center;
-  width: 60em;
-  height: 30em;
-  margin-right: 10em;
-  margin-left: 5em;
-}
-@media (max-width: 600px) {
-  #gallery {
-  scroll-snap-type: x mandatory;
-  overflow-x: scroll;
-  display: flex;
-}
-  #gallery img {
-   scroll-snap-align: center;
-  width: 20em;
-  height: 10em;
-  margin-right: 3em;
-  margin-left: 1em;
-}
-  .dabba {
-  width: 265px;
-  margin-top: 20em;
-  height: 19em;
-}
+.container {
+  height: 100vh;
   
 }
-.fa {
-  font-size: 30px;
-  color: #fff;
-  margin: 10px;
+#app {
+  font-size: 6em;
+  padding-top: 2em;
 }
-#foot {
-  margin-top: 200px;
-  background: #000;
+#intro {
+  height: 100vh;
+  padding-top: 2em;
+  background: white;
+  color: black;
+  font-size: 4em;
 }
-footer {
-  margin-top: 10em;
+#text {
+  font-size: 0.4em;
+}
+#work {
+  font-size: 3em;
+}
+a {
+  color: orange;
+}
+.icons {
+  font-size: 2em;
+}
+@media (max-width: 600px){
+  .container {
+    height: 100vh;
+    
+  }
+  #app {
+    font-size: 2em;
+  padding-top: 10em;
+}
 }
 @-ms-viewport{
   width: device-width;
