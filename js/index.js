@@ -1,11 +1,15 @@
-setTimeout(function () {
-  $(".dabba").html("<div class='line'>I am Prateek...</div>")
-},3500);
+var app = document.getElementById('app');
 
-  setTimeout(function () {
-  $(".up").html('<a href="#nav"><img id="up" src="https://image.flaticon.com/icons/svg/25/25223.svg" alt="up icon!" height="30px" width="30px"></a>')
-},6500);
+var typewriter = new Typewriter(app, {
+    loop: false
+});
 
-function Flicker() { $("#up").delay(1500).fadeTo(300,0).delay(1500).fadeTo(300,1, Flicker);
-}
-setTimeout(Flicker,6555);
+typewriter.typeString('Hello World!')
+    .pauseFor(2500)
+    .deleteAll()
+    .typeString('I am Prateek...')
+    .pauseFor(3000)
+    .deleteChars(10)
+    .typeString('Law.')
+    .pauseFor(2500)
+    .start();
