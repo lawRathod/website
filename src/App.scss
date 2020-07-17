@@ -1,24 +1,32 @@
-.mainApp{
-	display: flex;
-	flex-direction: row;
+@import "~bootstrap/scss/bootstrap";
+#mainApp{
 	height: 100vh;
+	display: grid;
+	grid-template-columns: 200px auto auto auto;
+}
+
+#loadSpinner{
+	position:absolute;
+	left: 50%;
+	top:50%;
 }
 
 #navigation{
 	font-weight: 500;
 	text-align: center;
 	font-size: 24px;
-	margin-top: 30vh;
+	display: grid;
+	grid-row-gap: 20px;
 	font-family: "FiraSansMed";
-	font-weight: 500;
-	margin-bottom: auto;
-	display:flex;
-	flex-direction: column;
-	width: 210px;
+	font-weight: 600;
+	margin: auto;
+	div a{
+		text-decoration: none;
+		color: #414141;
+		opacity: 60%;
+	}
 }
-#navigation div {
-	margin-bottom: 20px;
-}
+
 
 
 #separator {
@@ -30,8 +38,16 @@
 	background-color: #414141;
 }
 
-.navLinks {
-	text-decoration: none;
-	color: #414141;
-	opacity: 60%;
+
+@media only screen and (max-width: 850px){
+	#mainApp{
+		grid-template-columns: 150px auto auto auto;
+	}
+}
+
+
+@media only screen and (max-height: 500px){
+	#navigation{
+		margin: auto;
+	}
 }

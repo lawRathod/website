@@ -6,6 +6,10 @@
   font-family: 'FiraSansMed';
   src: local('FiraSansMed'), url(./fonts/FiraSans-Medium.ttf) format('truetype');
 }
+@font-face {
+  font-family: 'FiraSans';
+  src: local('FiraSans'), url(./fonts/FiraSans-Regular.ttf) format('truetype');
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
