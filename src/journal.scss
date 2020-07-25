@@ -1,0 +1,56 @@
+#journal{
+	display: grid;
+	grid-template-columns: auto 200px;
+	padding: 0 60px;
+	height: 100vh;
+}
+#sidebar{
+	border: 2px #E5E5E5 solid;
+	height: 90vh;
+	border-radius: 20px;
+	padding: 20px;
+	display: grid;
+	font-size: 14pt;
+	grid-auto-rows: 14pt;
+	grid-row-gap: 10px;
+	margin: auto 0;
+}
+#blog{
+	overflow-y: scroll;
+	scrollbar-width: none;
+	height: 90vh;
+	font-family: "FiraSans";
+	padding: 0px;
+	margin: auto 0;
+	width: 60vw;
+	color: #292929;
+
+	h1{
+		font-weight: 500;
+		font-size: 36pt;
+		margin-bottom: 20px;
+	}
+
+	p {
+		font-size: 14pt;
+	} 
+}
+
+@media only screen and (max-width: 1000px){
+	#blog{
+		h1{
+			font-size: 30pt;
+		}
+		p {
+			font-size: 12pt;
+		}
+		width: 45vw;
+	}
+	#journal{
+		padding: 0;
+	}
+	#sidebar{
+		width: 150px;
+		margin-top: 20px;
+	}
+}

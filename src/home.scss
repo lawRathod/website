@@ -2,7 +2,8 @@ $content-color: #292929;
 
 #Home{
 	display: grid;
-	grid-template-columns: auto auto;
+	padding: 0 60px;
+	grid-template-columns: auto 200px;
 	height: 100vh;
 }
 
@@ -19,8 +20,8 @@ $content-color: #292929;
 }
 
 #homeContent{
-	width: 50vw; 
-	margin: auto;
+	width: 60vw; 
+	margin: auto 0;
 }
 
 
@@ -37,12 +38,12 @@ $content-color: #292929;
 	padding: 20px;
 	border: 2px solid #E5E5E5;
 	border-radius: 25px;
-	width: 100%;
+	width: 200px;
 	margin: 10vh auto auto auto;
 }
 
 
-@media only screen and (max-width: 850px){
+@media only screen and (max-width: 1000px){
 	#homeContent{
 		width: 45vw;
 	}
@@ -52,7 +53,14 @@ $content-color: #292929;
 	#homeTitle{
 		font-size: 32pt;
 	}
-	.homeUrls{
+	#Home{
+		padding: 0;
+	}
+	#homeUrlsBox{
+		width: 150px;
+		margin-top: 20px;
+		div a{
 		font-size: 14pt;
+		}
 	}
 }

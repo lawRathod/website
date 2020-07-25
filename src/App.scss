@@ -2,7 +2,9 @@
 #mainApp{
 	height: 100vh;
 	display: grid;
-	grid-template-columns: 200px auto auto auto;
+	overflow-y:hidden;
+	scrollbar-width: none;
+	grid-template-columns: 200px 5px auto;
 }
 
 #loadSpinner{
@@ -14,7 +16,7 @@
 #navigation{
 	font-weight: 500;
 	text-align: center;
-	font-size: 24px;
+	font-size: 18pt;
 	display: grid;
 	grid-row-gap: 20px;
 	font-family: "FiraSansMed";
@@ -41,7 +43,10 @@
 
 @media only screen and (max-width: 850px){
 	#mainApp{
-		grid-template-columns: 150px auto auto auto;
+		grid-template-columns: 150px auto auto;
+	}
+	#navigation{
+		font-size: 16pt;
 	}
 }
 

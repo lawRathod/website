@@ -31,9 +31,10 @@ export default class App extends React.Component {
     super(props);
     this.state = { home: {} };
     this.fbd = new fb();
+    this.db = this.fbd.getDb();
   }
   async componentDidMount() {
-    const data = await getHome(this.fbd.getDb());
+    const data = await getHome(this.db);
     this.setState({
       home: data,
     });
@@ -119,7 +120,11 @@ export default class App extends React.Component {
                 render={() => <Home db={this.db} data={this.state.home} />}
                 exact
               />
-              <Route path="/journal" render={() => <Journal />} exact />
+              <Route
+                path="/journal"
+                render={() => <Journal db={this.db} />}
+                exact
+              />
               <Route path="/music" render={() => <Music />} exact />
               <Route path="/projects" render={() => <Projects />} exact />
               <Route path="/people" render={() => <People />} exact />
