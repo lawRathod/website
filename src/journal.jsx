@@ -9,6 +9,7 @@ export default class Journal extends React.Component {
       selected: 0,
       blogs: {},
       categories: {},
+      test: {},
     };
     this.db = this.props.db;
   }
