@@ -1,5 +1,5 @@
-import React from "react";
-import "./home.scss";
+import React from 'react';
+import './home.scss';
 
 export default class Home extends React.Component {
   render() {
@@ -17,7 +17,7 @@ export default class Home extends React.Component {
         </div>
         <div id="homeUrlsBox">
           {Object.keys(this.props.data.urls).map((key) => (
-            <div>
+            <div key={key}>
               <a
                 target="_blank"
                 rel="noopener noreferrer"

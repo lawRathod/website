@@ -1,5 +1,6 @@
-import * as firebase from "firebase/app";
 import "firebase/firestore";
+
+import * as firebase from "firebase/app";
 
 export default class fb {
   constructor() {

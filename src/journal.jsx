@@ -1,80 +1,134 @@
-import React, { useState } from "react";
-import Collapse from "react-bootstrap/Collapse";
+import React from "react";
 import "./journal.scss";
+import Spinner from "react-bootstrap/Spinner";
+import { NavLink } from "react-router-dom";
 
 export default class Journal extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected: 0,
-      blogs: {},
-      categories: {},
-      test: {},
+      blog: null,
+      entries: [],
+      selected: null,
     };
+    this.url = window.location.href.substr(
+      window.location.href.lastIndexOf("/") + 1
+    );
     this.db = this.props.db;
   }
   async componentDidMount() {
-    if (!Object.keys(this.state.blogs).length) {
+    if (!Object.keys(this.state.entries).length) {
       const data = await this.getBlogs(this.db);
       this.setState({
-        selected: data.blogs.content.length - 1,
-        blogs: data.blogs,
-        categories: data.categories,
+        blog: data.blog,
+        entries: data.entries,
+        selected: data.selected,
       });
     }
   }
+  handleBlogSelect = async (title, index) => {
+    this.setState({
+      selected: index,
+      blog: null,
+    });
+    const blogRef = this.db.collection("journal").doc(title);
+    const blog = await blogRef.get();
+    this.setState({
+      blog: blog.data(),
+    });
+  };
 
-  renderJournal = () => {
-    const [open, setOpen] = useState(false);
+  async getBlogs(db) {
+    const entriesRef = db.collection("journal").doc("entries");
+    const entriesData = await entriesRef.get();
+    const entries = entriesData.data();
+    var index = entries.list.length - 1;
+    var blogTitle = entries.list[index].title;
+    if (this.url.length && this.url !== "journal") {
+      var url = this.url;
+      url = url.replaceAll("+", " ");
+      blogTitle = url;
+      index = entries.list.findIndex((x) => x.title === blogTitle);
+      if (index < 0) {
+        window.history.pushState(null, "Journal", "/journal");
+        index = entries.list.length - 1;
+        blogTitle = entries.list[index].title;
+      }
+    } else {
+      const temp = "/journal/" + blogTitle.replaceAll(" ", "+");
+      window.history.pushState(null, "Journal", temp);
+    }
+    const blogRef = db.collection("journal").doc(blogTitle);
+    const blog = await blogRef.get();
+    const data = {
+      blog: blog.data(),
+      entries: entries.list.reverse(),
+      selected: entries.list.length - 1 - index,
+    };
+
+    return data;
+  }
+  renderSidebar = () => {
     return (
-      <div id="journal">
-        <div
-          id="blog"
-          dangerouslySetInnerHTML={{
-            __html: this.state.blogs.content[this.state.selected].entry.content,
-          }}
-        />
-        <div id="sidebar">
-          <div
-            onClick={() => setOpen(!open)}
-            aria-controls="example-collapse-text"
-            aria-expanded={open}
-            className="category collapsible"
-          >
-            <span>Recents</span>
-          </div>
-
-          <Collapse in={open}>
-            <div id="example-collapse-text">Hello</div>
-          </Collapse>
-          {this.state.categories.names.map((name) => {
-            return (
-              <div className="category">
-                <span>{name.charAt(0).toUpperCase() + name.slice(1)}</span>
+      <div id="sidebar">
+        {this.state.entries.map((val, index) => {
+          return (
+            <div key={val.title} className="entries">
+              <div
+                className={
+                  index === this.state.selected
+                    ? "entryTitle entrySelected"
+                    : "entryTitle"
+                }
+              >
+                <NavLink
+                  onClick={() => this.handleBlogSelect(val.title, index)}
+                  to={"/journal/" + val.title.replaceAll(" ", "+")}
+                >
+                  {val.title}
+                </NavLink>
               </div>
-            );
-          })}
-        </div>
+              <div className="entryCategory">{val.category}</div>
+            </div>
+          );
+        })}
       </div>
     );
   };
 
-  async getBlogs(db) {
-    const blogRef = db.collection("journal").doc("blogs");
-    const catRef = db.collection("journal").doc("categories");
-    const blogsData = await blogRef.get();
-    const catData = await catRef.get();
-    const data = {
-      blogs: blogsData.data(),
-      categories: catData.data(),
-    };
-    return data;
-  }
-  render() {
-    return Object.keys(this.state.blogs).length ? (
-      this.renderJournal()
+  renderJournal = () => {
+    const { blog, entries } = this.state;
+    return blog ? (
+      <div id="journal">
+        <div
+          id="blog"
+          dangerouslySetInnerHTML={{
+            __html: this.state.blog.content,
+          }}
+        />
+        {this.renderSidebar()}
+      </div>
+    ) : entries.length ? (
+      <div id="journal">
+        <div id="blog">
+          <div id="loadSpinner">
+            <Spinner animation="border" role="status">
+              <span className="sr-only">Loading...</span>
+            </Spinner>
+          </div>
+        </div>
+        {this.renderSidebar()}
+      </div>
     ) : (
-      <div>loading</div>
+      <div id="loadSpinner">
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      </div>
     );
+  };
+
+  render() {
+    return this.renderJournal();
   }
 }

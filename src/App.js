@@ -9,23 +9,6 @@ import fb from "./firebase";
 import "./App.scss";
 import Spinner from "react-bootstrap/Spinner";
 
-async function getHome(db) {
-  const contentRef = db.collection("home").doc("content");
-  const docey = await contentRef.get();
-  const doc = docey.data();
-  const linksRef = db.collection("home").doc("urls");
-  const docey1 = await linksRef.get();
-  const doc1 = docey1.data();
-  const home = {
-    content: {
-      title: doc.title,
-      para: doc.para,
-    },
-    urls: doc1,
-  };
-  return home;
-}
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -34,34 +17,46 @@ export default class App extends React.Component {
     this.db = this.fbd.getDb();
   }
   async componentDidMount() {
-    const data = await getHome(this.db);
-    this.setState({
-      home: data,
-    });
     window.addEventListener("orientationchange", () => {
       window.location.reload();
     });
+    this.getHome();
   }
+  getHome = async () => {
+    const contentRef = this.db.collection("home").doc("content");
+    const docey = await contentRef.get();
+    const doc = docey.data();
+    const linksRef = this.db.collection("home").doc("urls");
+    const docey1 = await linksRef.get();
+    const doc1 = docey1.data();
+    const home = {
+      content: {
+        title: doc.title,
+        para: doc.para,
+      },
+      urls: doc1,
+    };
+
+    this.setState({
+      home: home,
+    });
+  };
   render() {
-    return Object.keys(this.state.home).length ? (
-      window.screen.orientation.type === "landscape-primary" ? (
-        this.renderApp()
-      ) : (
-        <div>
-          <h1>Sorry! Didn't add enough css! Please Rotate.</h1>
-        </div>
-      )
+    return window.screen.orientation.type === "landscape-primary" ? (
+      this.renderApp()
     ) : (
-      <div id="loadSpinner">
-        <Spinner animation="border" role="status">
-          <span className="sr-only">Loading...</span>
-        </Spinner>
+      <div>
+        <h1>Sorry! Didn't add enough css! Please rotate your screen. </h1>
       </div>
     );
   }
 
   renderApp = () => {
-    return (
+    //const data = await getHome(this.db);
+    //this.setState({
+    //home: data,
+    //});
+    return Object.keys(this.state.home).length ? (
       <div id="mainApp">
         <div id="navigation">
           <div>
@@ -125,12 +120,23 @@ export default class App extends React.Component {
                 render={() => <Journal db={this.db} />}
                 exact
               />
+              <Route
+                path="/journal/*"
+                render={() => <Journal db={this.db} />}
+                exact
+              />
               <Route path="/music" render={() => <Music />} exact />
               <Route path="/projects" render={() => <Projects />} exact />
               <Route path="/people" render={() => <People />} exact />
             </Switch>
           </main>
         </div>
+      </div>
+    ) : (
+      <div id="loadSpinner">
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
       </div>
     );
   };

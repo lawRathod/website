@@ -8,44 +8,20 @@
 	border: 2px #E5E5E5 solid;
 	height: 90vh;
 	border-radius: 20px;
-	padding: 0 20px;
-	display: block;
+	padding: 20px;
+	display: grid;
 	font-size: 12pt;
-	overflow-y: scroll;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-	margin: auto;
-
-	.entryCategory{
-		font-size: 6pt;
-		font-weight: 700;
-		border: 1px #6db1d6 solid;
-		background-color: #6db1d6;
-		display: inline;
-		color: white;
-		border-radius: 5px;
-		padding: 3px;
-
-	}
-
-	.entries {
-		margin: 20px 0;
-		.entryTitle a{
-		  text-decoration: none;
-		  color:  #292929 ;
-		}
-		.entrySelected{
-			font-weight: bold;
-		}
-	}
+	margin: auto 0;
 }
-#sidebar::-webkit-scrollbar {
-  display: none;
-}
-#blog::-webkit-scrollbar {
-  display: none;
-}
+.entryCategory{
+	font-size: 8pt;
+	border: 1px #E5E5E5 solid;
+	background-color: blue;
+	display: inline;
+	border-radius: 5px;
+	padding: 3px;
 
+}
 #blog{
 	overflow-y: scroll;
 	scrollbar-width: none;
@@ -54,7 +30,6 @@
 	padding: 0px;
 	margin: auto 0;
 	width: 60vw;
-	-ms-overflow-style: none;
 	color: #292929;
 
 	h1{
@@ -77,6 +52,9 @@
 			font-size: 12pt;
 		}
 		width: 45vw;
+	}
+	#journal{
+		padding: 0;
 	}
 	#sidebar{
 		width: 150px;
