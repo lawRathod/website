@@ -1,43 +1,44 @@
 #journal{
-	display: grid;
-	grid-template-columns: auto 200px;
-	padding: 0 60px;
-	height: 100vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 50px;
+  padding: 0 60px;
+  height: 100vh;
 }
 #sidebar{
-	border: 2px #E5E5E5 solid;
-	height: 90vh;
-	border-radius: 20px;
-	padding: 0 20px;
-	display: block;
-	font-size: 12pt;
-	overflow-y: scroll;
-	scrollbar-width: none;
-	-ms-overflow-style: none;
-	margin: auto;
+  border: 2px #E5E5E5 solid;
+  height: 90vh;
+  border-radius: 20px;
+  padding: 0 20px;
+  display: block;
+  font-size: 12pt;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  margin: auto;
 
-	.entryCategory{
-		font-size: 6pt;
-		font-weight: 700;
-		border: 1px #6db1d6 solid;
-		background-color: #6db1d6;
-		display: inline;
-		color: white;
-		border-radius: 5px;
-		padding: 3px;
+  .entryCategory{
+    font-size: 6pt;
+    font-weight: 700;
+    border: 1px #6db1d6 solid;
+    background-color: #6db1d6;
+    display: inline;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
 
-	}
+  }
 
-	.entries {
-		margin: 20px 0;
-		.entryTitle a{
-		  text-decoration: none;
-		  color:  #292929 ;
-		}
-		.entrySelected{
-			font-weight: bold;
-		}
-	}
+  .entries {
+    margin: 20px 0;
+    .entryTitle a{
+      text-decoration: none;
+      color:  #292929 ;
+    }
+    .entrySelected{
+      font-weight: bold;
+    }
+  }
 }
 #sidebar::-webkit-scrollbar {
   display: none;
@@ -47,39 +48,39 @@
 }
 
 #blog{
-	overflow-y: scroll;
-	scrollbar-width: none;
-	height: 90vh;
-	font-family: "FiraSans";
-	padding: 0px;
-	margin: auto 0;
-	width: 60vw;
-	-ms-overflow-style: none;
-	color: #292929;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  height: 90vh;
+  font-family: "FiraSans";
+  margin: auto 0;
+  -ms-overflow-style: none;
+  color: #292929;
 
-	h1{
-		font-weight: 500;
-		font-size: 36pt;
-		margin-bottom: 20px;
-	}
+  h1{
+    font-family: "FiraSansBold";
+    font-size: 36pt;
+    margin-bottom: 20px;
+  }
 
-	p {
-		font-size: 14pt;
-	} 
+  p {
+    font-size: 14pt;
+  } 
 }
 
 @media only screen and (max-width: 1000px){
-	#blog{
-		h1{
-			font-size: 30pt;
-		}
-		p {
-			font-size: 12pt;
-		}
-		width: 45vw;
-	}
-	#sidebar{
-		width: 150px;
-		margin-top: 20px;
-	}
+  #blog{
+    h1{
+      font-size: 30pt;
+    }
+    p {
+      font-size: 12pt;
+    }
+  }
+  #journal{
+    padding: 0 30px;
+  }
+  #sidebar{
+    width: 150px;
+    margin-top: 20px;
+  }
 }

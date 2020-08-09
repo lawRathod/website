@@ -125,7 +125,11 @@ export default class App extends React.Component {
                 render={() => <Journal db={this.db} />}
                 exact
               />
-              <Route path="/music" render={() => <Music />} exact />
+              <Route
+                path="/music"
+                render={() => <Music db={this.db} />}
+                exact
+              />
               <Route path="/projects" render={() => <Projects />} exact />
               <Route path="/people" render={() => <People />} exact />
             </Switch>

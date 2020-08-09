@@ -25,7 +25,31 @@ export default class Journal extends React.Component {
         selected: data.selected,
       });
     }
+    window.onpopstate = () => {
+      this.changeBlog(
+        window.location.href.substr(window.location.href.lastIndexOf("/") + 1)
+      );
+    };
   }
+
+  changeBlog = async (title) => {
+    if (title.length && title !== "journal") {
+      title = title.replaceAll("+", " ");
+      const index = this.state.entries.findIndex((x) => x.title === title);
+      if (index < 0) {
+        return;
+      }
+      this.setState({
+        blog: null,
+        selected: index,
+      });
+      const blogRef = this.db.collection("journal").doc(title);
+      const blog = await blogRef.get();
+      this.setState({
+        blog: blog.data(),
+      });
+    }
+  };
   handleBlogSelect = async (title, index) => {
     this.setState({
       selected: index,

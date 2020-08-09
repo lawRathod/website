@@ -3,7 +3,7 @@ $content-color: #292929;
 #Home{
 	display: grid;
 	padding: 0 60px;
-	grid-template-columns: auto 200px;
+	grid-template-columns: auto auto;
 	height: 100vh;
 }
 
@@ -20,8 +20,8 @@ $content-color: #292929;
 }
 
 #homeContent{
-	width: 60vw; 
-	margin: auto 0;
+	margin: auto;
+	padding: 0 30px;
 }
 
 
@@ -44,11 +44,14 @@ $content-color: #292929;
 
 
 @media only screen and (max-width: 1000px){
-	#homeContent{
-		width: 45vw;
+	#Home{
+		padding: 0 30px;
 	}
 	#homePara{
 		font-size: 22pt;
+	}
+	#homeContent {
+		padding: 0 15px;
 	}
 	#homeTitle{
 		font-size: 32pt;
