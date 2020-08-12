@@ -130,7 +130,11 @@ export default class App extends React.Component {
                 render={() => <Music db={this.db} />}
                 exact
               />
-              <Route path="/projects" render={() => <Projects />} exact />
+              <Route
+                path="/projects"
+                render={() => <Projects db={this.db} />}
+                exact
+              />
               <Route path="/people" render={() => <People />} exact />
             </Switch>
           </main>

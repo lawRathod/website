@@ -74,9 +74,13 @@ export default class Journal extends React.Component {
       blogTitle = url;
       index = entries.list.findIndex((x) => x.title === blogTitle);
       if (index < 0) {
-        window.history.pushState(null, "Journal", "/journal");
         index = entries.list.length - 1;
         blogTitle = entries.list[index].title;
+        window.history.pushState(
+          null,
+          "Journal",
+          "/journal/" + blogTitle.replace(/\s/g, "+")
+        );
       }
     } else {
       const temp = "/journal/" + blogTitle.replace(/\s/g, "+");

@@ -20,41 +20,41 @@ $content-color: #292929;
 	width: 100%;
 	border-radius: 20px;
 	padding: 20px 30px;
-  -ms-overflow-style: none;
+	-ms-overflow-style: none;
 	scrollbar-width: none;
 
 	#tEntries {
-		margin: 20px 0;
-		display: grid;
-		grid-row-gap: 20px;
-		margin-left: 30px;
-		font-weight: 600;
-		.eTitle{
-			font-size: 20pt;
-			display: list-item;
-		}
-		.eBy{
-			font-weight: 550;
-			font-size: 14pt;
-			opacity: 50%;
-		}
-		.tUrls {
-			color: $content-color ;
-			text-decoration: none !important;
-		}
-		.tUrls:hover{
-			color: orange;
-		}
+	  margin: 20px 0;
+	  display: grid;
+	  grid-row-gap: 20px;
+	  margin-left: 30px;
+	  font-weight: 600;
+	  .eTitle{
+	    font-size: 20pt;
+	    display: list-item;
+	  }
+	  .eBy{
+	    font-weight: 550;
+	    font-size: 14pt;
+	    opacity: 50%;
+	  }
+	  .tUrls {
+	    color: $content-color ;
+	    text-decoration: none !important;
+	  }
+	  .tUrls:hover{
+	    color: orange;
+	  }
 	}
 
-}
+      }
 
-#tTitle{
+      #tTitle{
 	font-size: 42pt;
 	font-family:"FiraSansMed";
-}
+      }
 
-#playlists{
+      #playlists{
 	border: 2px solid #E5E5E5;
 	display: grid;
 	padding: 20px;
@@ -64,54 +64,54 @@ $content-color: #292929;
 	font-family: "FiraSansMed";
 	font-size: 16pt;
 	#pEntries{
-		display: grid;
-		grid-row-gap: 5px;
-		margin: 15px auto 10px 10px;
-		font-size: 12pt;
-		.pUrls {
-			color: $content-color ;
-			text-decoration: none !important;
-		}
-		.pUrls:hover{
-			color: orange;
-		}
+	  display: grid;
+	  grid-row-gap: 5px;
+	  margin: 15px auto 10px 10px;
+	  font-size: 12pt;
+	  .pUrls {
+	    color: $content-color ;
+	    text-decoration: none !important;
+	  }
+	  .pUrls:hover{
+	    color: orange;
+	  }
 	}
-}
+      }
 
-@media only screen and (max-width: 1000px){
+      @media only screen and (max-width: 1000px){
 	#topFive{
-		padding: 20px;
-		#tTitle{
-			font-size: 20pt;
-		}
-		#tEntries {
-			margin-top: 10px;
-			margin-left: 20px;
-			grid-row-gap: 5px;
-			.tEntry {
-				.eTitle {
-					font-size: 12pt;
-				}
-				.eBy{
-					font-size: 10pt;
-				}
-			}
-		}
+	  padding: 20px;
+	  #tTitle{
+	    font-size: 20pt;
+	  }
+	  #tEntries {
+	    margin-top: 10px;
+	    margin-left: 20px;
+	    grid-row-gap: 5px;
+	    .tEntry {
+	      .eTitle {
+		font-size: 12pt;
+	      }
+	      .eBy{
+		font-size: 10pt;
+	      }
+	    }
+	  }
 	}
 	#music{
-		padding: 0 30px;
-		grid-column-gap: 15px;
-		grid-template-columns: auto 150px;
+	  padding: 0 30px;
+	  grid-column-gap: 15px;
+	  grid-template-columns: auto 150px;
 	}
 	#playlists{
-		width: 150px;
+	  width: 150px;
 
-		#pTitle{
-			font-size: 12pt;
-		}
-		#pEntries {
-			margin-left: 5px;
-			font-size: 10pt;
-		}
+	  #pTitle{
+	    font-size: 12pt;
+	  }
+	  #pEntries {
+	    margin-left: 5px;
+	    font-size: 10pt;
+	  }
 	}
-}
+      }

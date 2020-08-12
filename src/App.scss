@@ -3,6 +3,8 @@
 	height: 100vh;
 	display: grid;
 	overflow-y:hidden;
+	max-width: 2080px;
+	margin: auto;
 	scrollbar-width: none;
 	grid-template-columns: 200px 5px auto;
 }
