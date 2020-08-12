@@ -1,5 +1,6 @@
 import React from "react";
 import Spinner from "react-bootstrap/Spinner";
+import "./music.scss";
 
 export default class Music extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export default class Music extends React.Component {
       topFive: data.topFive,
       playlists: data.playlists,
     });
+    console.log(this.state);
   }
 
   getData = async (db) => {
@@ -29,7 +31,61 @@ export default class Music extends React.Component {
   renderMusic = () => {
     return (
       <div id="music">
-        <div id="topFive"></div> <div id="playlists"></div>
+        <div id="topFive">
+          <div id="tTitle">
+            <span>Listening to...</span>
+          </div>
+          <div id="tEntries">
+            {this.state.topFive.map((obj) => {
+              return (
+                <div className="tEntry" key={obj.title}>
+                  <div className="eTitle">
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="tUrls"
+                      href={obj.url}
+                    >
+                      {obj.title}
+                    </a>
+                  </div>
+                  <div className="eBy">
+                    <span>By: </span>
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="tUrls"
+                      href={obj.artist}
+                    >
+                      {obj.by}
+                    </a>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        <div id="playlists">
+          <div id="pTitle">
+            <span>Playlists</span>
+          </div>
+          <div id="pEntries">
+            {Object.keys(this.state.playlists).map((key) => {
+              return (
+                <div className="pEntry" key={key}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="pUrls"
+                    href={this.state.playlists[key]}
+                  >
+                    {key}
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
       </div>
     );
   };
@@ -38,9 +94,11 @@ export default class Music extends React.Component {
     return this.state.topFive.length ? (
       this.renderMusic()
     ) : (
-      <Spinner animation="border" role="status">
-        <span className="sr-only">Loading...</span>
-      </Spinner>
+      <div id="loadSpinner">
+        <Spinner animation="border" role="status">
+          <span className="sr-only">Loading...</span>
+        </Spinner>
+      </div>
     );
   }
 }

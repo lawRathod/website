@@ -34,7 +34,7 @@ export default class Journal extends React.Component {
 
   changeBlog = async (title) => {
     if (title.length && title !== "journal") {
-      title = title.replaceAll("+", " ");
+      title = title.replace(/\+/g, " ");
       const index = this.state.entries.findIndex((x) => x.title === title);
       if (index < 0) {
         return;
@@ -70,7 +70,7 @@ export default class Journal extends React.Component {
     var blogTitle = entries.list[index].title;
     if (this.url.length && this.url !== "journal") {
       var url = this.url;
-      url = url.replaceAll("+", " ");
+      url = url.replace(/\+/g, " ");
       blogTitle = url;
       index = entries.list.findIndex((x) => x.title === blogTitle);
       if (index < 0) {
@@ -79,7 +79,7 @@ export default class Journal extends React.Component {
         blogTitle = entries.list[index].title;
       }
     } else {
-      const temp = "/journal/" + blogTitle.replaceAll(" ", "+");
+      const temp = "/journal/" + blogTitle.replace(/\s/g, "+");
       window.history.pushState(null, "Journal", temp);
     }
     const blogRef = db.collection("journal").doc(blogTitle);
@@ -107,7 +107,7 @@ export default class Journal extends React.Component {
               >
                 <NavLink
                   onClick={() => this.handleBlogSelect(val.title, index)}
-                  to={"/journal/" + val.title.replaceAll(" ", "+")}
+                  to={"/journal/" + val.title.replace(/\s/g, "+")}
                 >
                   {val.title}
                 </NavLink>

@@ -1,66 +1,69 @@
 $content-color: #292929;
 
-#Home{
-	display: grid;
-	padding: 0 60px;
-	grid-template-columns: auto auto;
-	height: 100vh;
+#home{
+  display: grid;
+  grid-column-gap: 50px;
+  padding: 0 60px;
+  grid-template-columns: auto 200px;
+  height: 100vh;
 }
 
 #homeTitle{
-	font-family: "FiraSansBold";
-	font-size: 42pt;
-	color: $content-color;
+  font-family: "FiraSansBold";
+  font-size: 42pt;
+  color: $content-color;
 }
 
 #homePara{
-	font-family: "FiraSans";
-	font-size: 36pt;
-	color: $content-color;
+  font-family: "FiraSans";
+  font-size: 36pt;
+  color: $content-color;
 }
 
 #homeContent{
-	margin: auto;
-	padding: 0 30px;
+  margin: auto;
+  padding: 0 30px;
 }
 
 
 
 #homeUrlsBox{
-	div a{
-		text-decoration: none;
-		color: $content-color;
-		font-family: "FiraSansMed";
-		font-size: 18pt;
-	}
-	display: grid;
-	grid-row-gap: 20px;
-	padding: 20px;
-	border: 2px solid #E5E5E5;
-	border-radius: 25px;
-	width: 200px;
-	margin: 10vh auto auto auto;
+  div a{
+    text-decoration: none;
+    color: $content-color;
+    font-family: "FiraSansMed";
+    font-size: 18pt;
+  }
+  display: grid;
+  grid-row-gap: 20px;
+  padding: 20px;
+  border: 2px solid #E5E5E5;
+  border-radius: 25px;
+  width: 200px;
+  margin: 10vh auto auto auto;
 }
 
 
 @media only screen and (max-width: 1000px){
-	#Home{
-		padding: 0 30px;
-	}
-	#homePara{
-		font-size: 22pt;
-	}
-	#homeContent {
-		padding: 0 15px;
-	}
-	#homeTitle{
-		font-size: 32pt;
-	}
-	#homeUrlsBox{
-		width: 150px;
-		margin-top: 20px;
-		div a{
-		font-size: 14pt;
-		}
-	}
+  #home{
+    grid-template-columns: auto 150px;
+    padding: 0 30px;
+    grid-column-gap: 15px;
+  }
+  #homePara{
+    font-size: 22pt;
+  }
+  #homeContent {
+    padding: 0 15px;
+  }
+  #homeTitle{
+    font-size: 32pt;
+  }
+  #homeUrlsBox{
+    width: 150px;
+    margin-top: 20px;
+    div a{
+      font-size: 14pt;
+    }
+  }
 }

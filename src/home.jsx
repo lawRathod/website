@@ -1,10 +1,10 @@
-import React from 'react';
-import './home.scss';
+import React from "react";
+import "./home.scss";
 
 export default class Home extends React.Component {
   render() {
     return (
-      <div id="Home">
+      <div id="home">
         <div id="homeContent">
           <div id="homeTitle">
             <span>{this.props.data.content.title}</span>
