@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./home";
 import Journal from "./journal";
-import Music from "./music";
+import Ears from "./ears";
 import Projects from "./projects";
 import People from "./people";
 import { Route, Switch, NavLink } from "react-router-dom";
@@ -62,6 +62,7 @@ export default class App extends React.Component {
           <div>
             <NavLink
               activeStyle={{ opacity: "100%" }}
+              style={{ opacity: "60%" }}
               className="navLinks"
               to="/"
               exact
@@ -72,6 +73,7 @@ export default class App extends React.Component {
           <div>
             <NavLink
               activeStyle={{ opacity: "100%" }}
+              style={{ opacity: "60%" }}
               className="navLinks"
               to="/journal"
             >
@@ -81,16 +83,18 @@ export default class App extends React.Component {
           <div>
             <NavLink
               activeStyle={{ opacity: "100%" }}
+              style={{ opacity: "60%" }}
               className="navLinks"
-              to="/music"
+              to="/ears"
             >
-              Music
+              Ears
             </NavLink>
           </div>
           <div>
             <NavLink
               activeStyle={{ opacity: "100%" }}
               className="navLinks"
+              style={{ opacity: "60%" }}
               to="/projects"
             >
               Projects
@@ -99,6 +103,7 @@ export default class App extends React.Component {
           <div>
             <NavLink
               activeStyle={{ opacity: "100%" }}
+              style={{ opacity: "60%" }}
               className="navLinks"
               to="/people"
             >
@@ -125,17 +130,17 @@ export default class App extends React.Component {
                 render={() => <Journal db={this.db} />}
                 exact
               />
-              <Route
-                path="/music"
-                render={() => <Music db={this.db} />}
-                exact
-              />
+              <Route path="/ears" render={() => <Ears db={this.db} />} exact />
               <Route
                 path="/projects"
                 render={() => <Projects db={this.db} />}
                 exact
               />
-              <Route path="/people" render={() => <People />} exact />
+              <Route
+                path="/people"
+                render={() => <People db={this.db} />}
+                exact
+              />
             </Switch>
           </main>
         </div>

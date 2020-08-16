@@ -1,46 +1,54 @@
 $box-size: 225px;
 $content-color: #292929;
 
-#projects{
+#people{
 	display: grid;
 	height: 100vh;
 	overflow-y: hidden;
 }
-#projectsContainer::-webkit-scrollbar {
+#peopleContainer::-webkit-scrollbar {
   display: none;
 }
-#projectsContainer{
+#peopleContainer{
+	height: 90vh;
+	margin: auto;
+	width: 100%;
+	padding: 0 100px;
 	overflow-y: scroll;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
+}
+#peopleTitle{
+	font-size: 36pt;
+	font-family:"FiraSansMed";
+      }
+#peopleGrid{
 	display: grid;
-	grid-template-columns: repeat(3, $box-size);
-	justify-content: space-between;
+	grid-template-columns: repeat(2, $box-size+200);
+	grid-column-gap: 50px;
 	grid-auto-rows: $box-size;
+	margin-top: 30px;
 	grid-row-gap: 50px;
-	height: 90vh;
-	margin: auto;
-	margin-bottom: 20px;
 	max-width: 1100px;
 	width: 100%;
-	padding: 20px 100px;
 }
 
-.project{
+.person{
 	color: $content-color;
-	width: $box-size;
+	width: $box-size + 200;
 	display: grid;
+	border: 2px #E5E5E5 solid;
 	border-radius: 25px;
 	height: $box-size;
 	padding: 20px;
 	font-family: "FiraSansMed";
-	.pName{
+	.personName{
 		font-size: 22pt;
 	}
-	.pMid {
+	.personMid {
 	  font-weight: bold;
 		font-size: 18pt;
-		.projectGithubUrls {
+		.personUrl {
 			text-decoration: none !important;
 			color: $content-color;
 			opacity: 0.5;
@@ -50,41 +58,45 @@ $content-color: #292929;
 		}
 	}
 
-	.pDesc {
+	.personDesc {
 		font-weight: 400;
 		margin-top: 10px;
 	}
 }
 
-$small-box-size: 160px;
-
+$small-box-size: 170px;
 @media only screen and (max-width: 1000px){
-  #projectsContainer{
-    grid-template-columns: repeat(3, $small-box-size);
+	#peopleContainer{
+		padding: 0 50px; 
+	}
+  #peopleGrid{
+    grid-template-columns: repeat(2, $small-box-size + 100);
     grid-auto-rows: $small-box-size;
     grid-row-gap: 30px;
-    padding: 10px 50px;
+    grid-column-gap: 30px;
   }
-  .project{
-    width: $small-box-size;
+  .person{
+    width: $small-box-size + 100;
     height: $small-box-size;
-    padding: 15px;
-    .pName{
+    .personName{
       font-size: 14pt;
     }
-    .pMid {
+    .personMid {
       font-size: 11pt;
       font-weight: 600;
-      .projectGithubUrls {
+      .personUrl {
 	text-decoration: none !important;
 	color: $content-color;
       }
     }
 
-    .pDesc {
+    .personDesc {
       font-weight: 400;
       font-size: 10pt;
       margin-top: 5px;
     }
   }
+	#peopleTitle{
+      font-size: 22pt;
+    }
 }

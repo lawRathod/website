@@ -21,8 +21,7 @@
   .entryCategory{
     font-size: 6pt;
     font-weight: 700;
-    border: 1px #6db1d6 solid;
-    background-color: #6db1d6;
+    background-color: #ffa066;
     display: inline;
     color: white;
     border-radius: 5px;
@@ -36,6 +35,9 @@
       text-decoration: none;
       color:  #292929 ;
     }
+		.entryTitle a:hover{
+			color:#6db1d6;
+		}
     .entrySelected{
       font-weight: bold;
     }

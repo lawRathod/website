@@ -1,8 +1,8 @@
 import React from "react";
 import Spinner from "react-bootstrap/Spinner";
-import "./music.scss";
+import "./ears.scss";
 
-export default class Music extends React.Component {
+export default class Ears extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,9 +28,9 @@ export default class Music extends React.Component {
     return data.data();
   };
 
-  renderMusic = () => {
+  renderEars = () => {
     return (
-      <div id="music">
+      <div id="ears">
         <div id="topFive">
           <div id="tTitle">
             <span>Listening to...</span>
@@ -92,7 +92,7 @@ export default class Music extends React.Component {
 
   render() {
     return this.state.topFive.length ? (
-      this.renderMusic()
+      this.renderEars()
     ) : (
       <div id="loadSpinner">
         <Spinner animation="border" role="status">
