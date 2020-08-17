@@ -24,7 +24,7 @@ $content-color: #292929;
       }
 #peopleGrid{
 	display: grid;
-	grid-template-columns: repeat(2, $box-size+200);
+	grid-template-columns: repeat(auto-fit, $box-size+200);
 	grid-column-gap: 50px;
 	grid-auto-rows: $box-size;
 	margin-top: 30px;
@@ -65,12 +65,12 @@ $content-color: #292929;
 }
 
 $small-box-size: 170px;
-@media only screen and (max-width: 1000px){
+@media only screen and (max-width: 900px){
 	#peopleContainer{
 		padding: 0 50px; 
 	}
   #peopleGrid{
-    grid-template-columns: repeat(2, $small-box-size + 100);
+    grid-template-columns: repeat(autofit, $small-box-size + 100);
     grid-auto-rows: $small-box-size;
     grid-row-gap: 30px;
     grid-column-gap: 30px;

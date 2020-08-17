@@ -32,7 +32,7 @@ export default class People extends React.Component {
           <div id="peopleGrid">
             {this.state.people.map((obj) => {
               return (
-                <div className="person">
+                <div key={obj.name} className="person">
                   <div className="personName">{obj.name}</div>
                   <div className="personMid">
                     <a

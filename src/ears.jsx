@@ -18,7 +18,6 @@ export default class Ears extends React.Component {
       topFive: data.topFive,
       playlists: data.playlists,
     });
-    console.log(this.state);
   }
 
   getData = async (db) => {

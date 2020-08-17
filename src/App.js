@@ -5,6 +5,7 @@ import Ears from "./ears";
 import Projects from "./projects";
 import People from "./people";
 import { Route, Switch, NavLink } from "react-router-dom";
+import SinglePage from "./singlepage";
 import fb from "./firebase";
 import "./App.scss";
 import Spinner from "react-bootstrap/Spinner";
@@ -42,12 +43,16 @@ export default class App extends React.Component {
     });
   };
   render() {
-    return window.screen.orientation.type === "landscape-primary" ? (
+    //return window.screen.orientation.type === "landscape-primary" &&
+    //window.screen.width >= 670 ? (
+    //this.renderApp()
+    //) : (
+    //<SinglePage type={window.screen.width >= 670 ? "small" : "narrow"} />
+    //);
+    return window.screen.width >= 670 ? (
       this.renderApp()
     ) : (
-      <div>
-        <h1>Sorry! Didn't add enough css! Please rotate your screen. </h1>
-      </div>
+      <SinglePage type={window.screen.width >= 670 ? "small" : "narrow"} />
     );
   }
 

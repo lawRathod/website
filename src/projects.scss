@@ -14,8 +14,9 @@ $content-color: #292929;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	display: grid;
-	grid-template-columns: repeat(3, $box-size);
-	justify-content: space-between;
+	grid-template-columns: repeat(auto-fit, $box-size + 30);
+	justify-content: center;
+	grid-column-gap: 40px;
 	grid-auto-rows: $box-size;
 	grid-row-gap: 50px;
 	height: 90vh;
@@ -31,6 +32,7 @@ $content-color: #292929;
 	width: $box-size;
 	display: grid;
 	border-radius: 25px;
+	margin: auto;
 	height: $box-size;
 	padding: 20px;
 	font-family: "FiraSansMed";
@@ -60,8 +62,9 @@ $small-box-size: 160px;
 
 @media only screen and (max-width: 1000px){
   #projectsContainer{
-    grid-template-columns: repeat(3, $small-box-size);
+    grid-template-columns: repeat(auto-fit, $small-box-size + 10);
     grid-auto-rows: $small-box-size;
+    grid-column-gap: 20px;
     grid-row-gap: 30px;
     padding: 10px 50px;
   }
