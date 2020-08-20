@@ -183,8 +183,8 @@ export default class SinglePage extends React.Component {
         <div id="spProjectContainer"> {this.renderProjects()}</div>
         <div id="spFooter">
           <p>
-            Put your phone in landscape if you don't mind. Anyways,{" "}
-            <b>have a great day</b>.
+            Please rotate your screen to landscape to check out the full app.{" "}
+            <b>Have a great day</b>.
           </p>
         </div>
       </div>
