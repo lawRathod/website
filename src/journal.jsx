@@ -62,7 +62,7 @@ export default class Journal extends React.Component {
     });
   };
 
-  async getBlogs(db) {
+  getBlogs = async (db) => {
     const entriesRef = db.collection("journal").doc("entries");
     const entriesData = await entriesRef.get();
     const entries = entriesData.data();
@@ -95,7 +95,7 @@ export default class Journal extends React.Component {
     };
 
     return data;
-  }
+  };
   renderSidebar = () => {
     return (
       <div id="sidebar">

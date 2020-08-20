@@ -4,7 +4,7 @@ import Journal from "./journal";
 import Ears from "./ears";
 import Projects from "./projects";
 import People from "./people";
-import { Route, Switch, NavLink } from "react-router-dom";
+import { Redirect, Route, Switch, NavLink } from "react-router-dom";
 import SinglePage from "./singlepage";
 import fb from "./firebase";
 import "./App.scss";
@@ -16,6 +16,9 @@ export default class App extends React.Component {
     this.state = { home: {} };
     this.fbd = new fb();
     this.db = this.fbd.getDb();
+    this.location = window.location.href
+      .substr(window.location.href.lastIndexOf("/") + 1)
+      .indexOf("singlePage");
   }
   async componentDidMount() {
     window.addEventListener("orientationchange", () => {
@@ -49,10 +52,13 @@ export default class App extends React.Component {
     //) : (
     //<SinglePage type={window.screen.width >= 670 ? "small" : "narrow"} />
     //);
-    return window.screen.width >= 670 ? (
+    return window.screen.width >= 670 && this.location === -1 ? (
       this.renderApp()
     ) : (
-      <SinglePage type={window.screen.width >= 670 ? "small" : "narrow"} />
+      <SinglePage
+        db={this.db}
+        type={window.screen.width >= 670 ? "small" : "narrow"}
+      />
     );
   }
 
@@ -135,6 +141,7 @@ export default class App extends React.Component {
                 render={() => <Journal db={this.db} />}
                 exact
               />
+
               <Route path="/ears" render={() => <Ears db={this.db} />} exact />
               <Route
                 path="/projects"
@@ -146,6 +153,7 @@ export default class App extends React.Component {
                 render={() => <People db={this.db} />}
                 exact
               />
+              <Redirect to="/" />
             </Switch>
           </main>
         </div>

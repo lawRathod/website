@@ -43,7 +43,6 @@ $content-color: #292929;
 	  font-weight: bold;
 		font-size: 18pt;
 		.projectGithubUrls {
-			text-decoration: none !important;
 			color: $content-color;
 			opacity: 0.5;
 		}
@@ -79,7 +78,6 @@ $small-box-size: 160px;
       font-size: 11pt;
       font-weight: 600;
       .projectGithubUrls {
-	text-decoration: none !important;
 	color: $content-color;
       }
     }

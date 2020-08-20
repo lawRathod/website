@@ -1,0 +1,118 @@
+.singlePage{
+	color: #292929 ;
+	font-family: "FiraSans";
+	display: grid;
+	text-align: center;
+	a {
+
+		color: #0055ff;
+	}
+	a:hover{
+		color: orange;
+	}
+}
+
+.spBlog {
+	width: 80vw;
+	text-align: left;
+	margin: 5vh auto;
+}
+
+#spJournal::-webkit-scrollbar {
+	display: none;
+}
+#spJournalContainer{
+	height: 100vh;
+	background-color: #f7f7f7;
+	overflow-y: hidden;
+
+
+	#spJournalEntryContainer{
+		padding: 30px 0;
+		display: grid;
+		grid-auto-rows: auto;
+		grid-row-gap: 20px;
+
+		.entry .entryMeta {
+			opacity: 70%;
+		}
+
+
+	}
+
+	#spJournal {
+		overflow-y: scroll;
+		text-align: left;
+		padding: 10vh 0;
+		margin: auto;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		height: 100vh;
+		width: 70vw;
+	}
+
+
+}
+#spProjects::-webkit-scrollbar {
+	display: none;
+}
+#spProjectContainer{
+	text-align: left;
+	height: 100vh;
+	overflow-y: hidden;
+
+	#spProjects {
+		margin: auto;
+		width: 70vw;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		height: 100vh;
+		overflow-y: scroll;
+		padding: 10vh 0;
+
+		.spProject .pMid{
+			opacity: 70%;
+		}
+
+		#spProjectEntryContainer{
+			padding: 20px 0;
+			display: grid;
+			grid-row-gap: 20px;
+		}
+	}
+}
+
+#spHomeContainer {
+	padding: 0 5vh;
+	height: 100vh;
+	display: grid;
+	grid-auto-rows: auto;
+	align-content: space-between;
+
+	#scrollDown{
+		font-size: 6pt;
+	}
+
+
+	#spHome{
+		margin-top: 20vh;
+	}
+
+
+
+	#spUrls{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		.spUrl{
+			margin: 10px;
+		}
+	}
+}
+
+#spFooter{
+	font-size: 6pt;
+}
+
+
