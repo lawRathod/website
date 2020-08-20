@@ -7,6 +7,10 @@
   src: local('FiraSansMed'), url(./fonts/FiraSans-Medium.ttf) format('truetype');
 }
 @font-face {
+  font-family: 'FiraSansThin';
+  src: local('FiraSansThin'), url(./fonts/FiraSans-Thin.ttf) format('truetype');
+}
+@font-face {
   font-family: 'FiraSans';
   src: local('FiraSans'), url(./fonts/FiraSans-Regular.ttf) format('truetype');
 }

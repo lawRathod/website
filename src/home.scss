@@ -9,13 +9,14 @@ $content-color: #292929;
 }
 
 #homeTitle{
-  font-family: "FiraSansBold";
+  font-family: "FiraSansMed";
   font-size: 42pt;
   color: $content-color;
 }
 
 #homePara{
-  font-family: "FiraSans";
+  font-family: "FiraSansThin";
+  font-weight: bolder;
   font-size: 36pt;
   color: $content-color;
 }
