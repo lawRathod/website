@@ -13,7 +13,7 @@ export default class Projects extends React.Component {
       "#e1c5fa",
       "#ffc0bd",
       "#fff7b8",
-      "#ffd4cc",
+      "#d0ffe2",
     ];
     this.state = {
       projects: [],

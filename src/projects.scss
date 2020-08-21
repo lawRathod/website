@@ -2,59 +2,59 @@ $box-size: 225px;
 $content-color: #292929;
 
 #projects{
-	display: grid;
-	height: 100vh;
-	overflow-y: hidden;
+  display: grid;
+  height: 100vh;
+  overflow-y: hidden;
 }
 #projectsContainer::-webkit-scrollbar {
   display: none;
 }
 #projectsContainer{
-	overflow-y: scroll;
-	-ms-overflow-style: none;
-	scrollbar-width: none;
-	display: grid;
-	grid-template-columns: repeat(auto-fit, $box-size + 30);
-	justify-content: center;
-	grid-column-gap: 40px;
-	grid-auto-rows: $box-size;
-	grid-row-gap: 50px;
-	height: 90vh;
-	margin: auto;
-	margin-bottom: 20px;
-	max-width: 1100px;
-	width: 100%;
-	padding: 20px 100px;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, $box-size + 30);
+  justify-content: center;
+  grid-column-gap: 40px;
+  grid-auto-rows: $box-size;
+  grid-row-gap: 50px;
+  height: 90vh;
+  margin: auto;
+  margin-bottom: 20px;
+  max-width: 1100px;
+  width: 100%;
+  padding: 20px 100px;
 }
 
 .project{
-	color: $content-color;
-	width: $box-size;
-	display: grid;
-	border-radius: 25px;
-	margin: auto;
-	height: $box-size;
-	padding: 20px;
-	font-family: "FiraSansMed";
-	.pName{
-		font-size: 22pt;
-	}
-	.pMid {
-	  font-weight: bold;
-		font-size: 18pt;
-		.projectGithubUrls {
-			color: $content-color;
-			opacity: 0.5;
-		}
-		a:hover{
-			opacity: 1;
-		}
-	}
+  color: $content-color;
+  width: $box-size;
+  display: grid;
+  border-radius: 25px;
+  margin: auto;
+  height: $box-size;
+  padding: 20px;
+  font-family: "FiraSansMed";
+  .pName{
+    font-size: 22pt;
+  }
+  .pMid {
+    font-weight: bold;
+    font-size: 18pt;
+    .projectGithubUrls {
+      color: $content-color;
+      opacity: 0.5;
+    }
+    a:hover{
+      opacity: 1;
+    }
+  }
 
-	.pDesc {
-		font-weight: 400;
-		margin-top: 10px;
-	}
+  .pDesc {
+    font-weight: 400;
+    margin-top: 10px;
+  }
 }
 
 $small-box-size: 160px;
