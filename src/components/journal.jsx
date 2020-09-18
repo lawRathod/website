@@ -1,5 +1,5 @@
 import React from "react";
-import "./journal.scss";
+import "../css/journal.scss";
 import Spinner from "react-bootstrap/Spinner";
 import { NavLink } from "react-router-dom";
 

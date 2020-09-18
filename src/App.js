@@ -1,13 +1,13 @@
 import React from "react";
-import Home from "./home";
-import Journal from "./journal";
-import Ears from "./ears";
-import Projects from "./projects";
-import People from "./people";
+import Home from "./components/home";
+import Journal from "./components/journal";
+import Ears from "./components/ears";
+import Projects from "./components/projects";
+import People from "./components/people";
 import { Redirect, Route, Switch, NavLink } from "react-router-dom";
-import SinglePage from "./singlepage";
+import SinglePage from "./components/singlepage";
 import fb from "./firebase";
-import "./App.scss";
+import "./css/App.scss";
 import Spinner from "react-bootstrap/Spinner";
 
 export default class App extends React.Component {

@@ -1,5 +1,5 @@
 import React from "react";
-import "./people.scss";
+import "../css/people.scss";
 import Spinner from "react-bootstrap/Spinner";
 
 export default class People extends React.Component {

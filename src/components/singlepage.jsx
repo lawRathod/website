@@ -1,5 +1,5 @@
 import React from "react";
-import "./singlepage.scss";
+import "../css/singlepage.scss";
 import Spinner from "react-bootstrap/Spinner";
 
 export default class SinglePage extends React.Component {

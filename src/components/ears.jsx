@@ -1,6 +1,6 @@
 import React from "react";
 import Spinner from "react-bootstrap/Spinner";
-import "./ears.scss";
+import "../css/ears.scss";
 
 export default class Ears extends React.Component {
   constructor(props) {

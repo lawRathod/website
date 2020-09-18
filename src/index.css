@@ -1,18 +1,18 @@
 @font-face {
   font-family: 'FiraSansBold';
-  src: local('FiraSansBold'), url(./fonts/FiraSans-Bold.ttf) format('truetype');
+  src: local('FiraSansBold'), url(./fonts/FiraSans-Bold.woff2);
 }
 @font-face {
   font-family: 'FiraSansMed';
-  src: local('FiraSansMed'), url(./fonts/FiraSans-Medium.ttf) format('truetype');
+  src: local('FiraSansMed'), url(./fonts/FiraSans-Medium.woff2);
 }
 @font-face {
   font-family: 'FiraSansThin';
-  src: local('FiraSansThin'), url(./fonts/FiraSans-Thin.ttf) format('truetype');
+  src: local('FiraSansThin'), url(./fonts/FiraSans-Thin.woff2);
 }
 @font-face {
   font-family: 'FiraSans';
-  src: local('FiraSans'), url(./fonts/FiraSans-Regular.ttf) format('truetype');
+  src: local('FiraSans'), url(./fonts/FiraSans-Regular.woff2);
 }
 body {
   margin: 0;
