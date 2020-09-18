@@ -18,13 +18,9 @@
 	margin: 5vh auto;
 }
 
-#spJournal::-webkit-scrollbar {
-	display: none;
-}
 #spJournalContainer{
-	height: 100vh;
+	min-height: 100vh;
 	background-color: #f7f7f7;
-	overflow-y: hidden;
 
 
 	#spJournalEntryContainer{
@@ -41,33 +37,22 @@
 	}
 
 	#spJournal {
-		overflow-y: scroll;
 		text-align: left;
 		padding: 10vh 0;
 		margin: auto;
-		scrollbar-width: none;
-		-ms-overflow-style: none;
 		height: 100vh;
 		width: 70vw;
 	}
 
 
 }
-#spProjects::-webkit-scrollbar {
-	display: none;
-}
 #spProjectContainer{
 	text-align: left;
-	height: 100vh;
-	overflow-y: hidden;
 
 	#spProjects {
 		margin: auto;
 		width: 70vw;
-		scrollbar-width: none;
-		-ms-overflow-style: none;
-		height: 100vh;
-		overflow-y: scroll;
+		min-height: 100vh;
 		padding: 10vh 0;
 
 		.spProject .pMid{
