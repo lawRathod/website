@@ -10,7 +10,7 @@ export default class SinglePage extends React.Component {
     this.url = window.location.href;
     this.path = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
     if(this.url.indexOf("journal") >= 0){
-      this.blog = window.location.href.substr(window.location.href.lastIndexOf("/") + 1)
+      this.blog = window.location.href.substr(window.location.href.lastIndexOf("/") + 1).replace(/\+/g, " ")
     }
     this.state = {
       blog: null,
