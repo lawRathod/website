@@ -6,8 +6,12 @@ export default class SinglePage extends React.Component {
   constructor(props) {
     super(props);
     this.db = props.db;
-    this.query = new URLSearchParams(window.location.search);
-    this.blog = this.query.get("blog");
+    this.blog = null;
+    this.url = window.location.href;
+    this.path = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+    if(this.url.indexOf("journal") >= 0){
+      this.blog = window.location.href.substr(window.location.href.lastIndexOf("/") + 1)
+    }
     this.state = {
       blog: null,
       home: {
@@ -27,7 +31,10 @@ export default class SinglePage extends React.Component {
       } else {
         window.location.href = "/";
       }
+    } else if (!this.blog && this.path) {
+        window.location.href = "/";
     }
+
 
     const entries = await this.getEntries(this.db);
     const home = await this.getHome(this.db);
@@ -93,7 +100,7 @@ export default class SinglePage extends React.Component {
                 </div>
                 <div className="pMid">
                   <a
-                    href={"/singlePage?blog=" + obj.name}
+                    href={"/journal/" + obj.name}
                     className="projectGithubUrls"
                   >
                     Read
@@ -128,7 +135,7 @@ export default class SinglePage extends React.Component {
             return (
               <div key={val.title} className="entry">
                 <div>
-                  <a href={"/singlePage?blog=" + val.title.replace(/\s/g, "+")}>
+                  <a href={"/journal/" + val.title.replace(/\s/g, "+")}>
                     <h4>{val.title}</h4>
                   </a>
                 </div>
