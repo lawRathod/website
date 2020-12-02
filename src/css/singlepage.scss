@@ -16,6 +16,34 @@
 	width: 80vw;
 	text-align: left;
 	margin: 5vh auto;
+	pre {
+		scrollbar-width: thin;
+		background-color: #E5E5E5;
+		padding: 20px 10px;
+		border-radius: 10px;
+		margin: 20px 20px 20px 0; 
+		code {
+			font-size: 12pt;
+		}
+	}
+}
+.spBlog::-webkit-scrollbar {
+  width: 5px;
+  background-color: #edebeb;
+}
+
+.spBlog::-webkit-scrollbar-thumb {
+  background: #595959;
+  box-shadow: 0px 1px 2px #edebeb; 
+}
+
+.spBlog pre::-webkit-scrollbar {
+  height: 5px;
+  background-color: #edebeb;
+}
+.spBlog pre::-webkit-scrollbar-thumb {
+  background: #595959;
+  box-shadow: 0px 1px 2px #edebeb; 
 }
 
 #spJournalContainer{
@@ -101,3 +129,13 @@
 }
 
 
+
+@media only screen and (max-width: 1000px){
+	.spBlog {
+		pre {
+			code{
+				font-size: 9pt;
+			}
+		}
+	}
+}

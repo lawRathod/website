@@ -18,25 +18,39 @@
   -ms-overflow-style: none;
   margin: auto;
 
-  .entryCategory{
-    font-size: 6pt;
-    font-weight: 700;
-    background-color: #ffa066;
-    display: inline;
-    color: white;
-    border-radius: 5px;
-    padding: 3px;
+  .entryTags{
+    display: flex;
+    flex-flow: wrap;
+    width: 160px;
+    .entryTag{
+      font-size: 7pt;
+      font-weight: 700;
+      margin: 2px;
+      display: inline;
+      color: white;
+      border-radius: 5px;
+      padding: 3px;
+
+    }
+    .category {
+      background-color: #ffa066;
+    }
+    .published {
+      background-color: #70b2de; 
+    }
+    .tag{
+      background-color: #7e78f0;
+    }
 
   }
-
   .entries {
     margin: 20px 0;
     .entryTitle a{
       color:  #292929 ;
     }
-		.entryTitle a:hover{
-			color: #6db1d6;
-		}
+    .entryTitle a:hover{
+      color: #6db1d6;
+    }
     .entrySelected{
       font-weight: bold;
     }
@@ -46,12 +60,29 @@
   display: none;
 }
 #blog::-webkit-scrollbar {
-  display: none;
+  width: 5px;
+  background-color: #edebeb;
 }
+
+#blog::-webkit-scrollbar-thumb {
+  background: #595959;
+  box-shadow: 0px 1px 2px #edebeb; 
+}
+
+#blog pre::-webkit-scrollbar {
+  height: 5px;
+  background-color: #edebeb;
+}
+#blog pre::-webkit-scrollbar-thumb {
+  background: #595959;
+  box-shadow: 0px 1px 2px #edebeb; 
+}
+
 
 #blog{
   overflow-y: scroll;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  padding-right: 5px;
   height: 90vh;
   font-family: "FiraSans";
   margin: auto 0;
@@ -68,6 +99,17 @@
   p {
     font-size: 14pt;
   } 
+
+  pre {
+    scrollbar-width: thin;
+    background-color: #E5E5E5;
+    padding: 20px 10px;
+    border-radius: 10px;
+    margin: 20px 20px 20px 0; 
+    code {
+      font-size: 12pt;
+    }
+  }
 }
 
 @media only screen and (max-width: 1000px){
@@ -78,6 +120,13 @@
     p {
       font-size: 12pt;
     }
+
+    pre {
+      code {
+	font-size: 9pt;
+      }
+    }
+
   }
   #journal{
     padding: 0 30px;
@@ -87,5 +136,12 @@
   #sidebar{
     width: 150px;
     margin-top: 20px;
+
+    .entryTags{
+      width: 110px;
+      .entryTag{
+	font-size: 6pt;
+      }
+    }
   }
 }

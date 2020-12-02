@@ -116,7 +116,15 @@ export default class Journal extends React.Component {
                   {val.title}
                 </NavLink>
               </div>
-              <div className="entryCategory">{val.category}</div>
+              <div className="entryTags">
+                <div className="entryTag category">{val.category}</div>
+                {val.tags ? (
+                  val.tags.map((tag) => {
+                    return (<div className="entryTag tag" key={tag}>{tag}</div>)      
+                  })
+                ) :  null  }
+                <div className="entryTag published">{"Published: "+val.date}</div>
+              </div>
             </div>
           );
         })}
