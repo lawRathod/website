@@ -17,6 +17,27 @@ export default class Journal extends React.Component {
     this.db = this.props.db;
   }
   async componentDidMount() {
+    var requestOptions = {
+      method: 'GET',
+      redirect: 'follow'
+    };
+
+    fetch("https://github.com/lawRathod/lawRathod.github.io/raw/alpha/blogs/list.json", requestOptions)
+      .then(response => response.text())
+      .then(result => {
+        result = JSON.parse(result);
+        console.log(result);
+      })
+      .catch(error => console.log('error', error));
+
+
+
+
+
+
+
+
+
     if (!Object.keys(this.state.entries).length) {
       const data = await this.getBlogs(this.db);
       this.setState({
