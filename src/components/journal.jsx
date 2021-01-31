@@ -18,25 +18,20 @@ export default class Journal extends React.Component {
   }
   async componentDidMount() {
     var requestOptions = {
-      method: 'GET',
-      redirect: 'follow'
+      method: "GET",
+      redirect: "follow",
     };
 
-    fetch("https://github.com/lawRathod/lawRathod.github.io/raw/alpha/blogs/list.json", requestOptions)
-      .then(response => response.text())
-      .then(result => {
+    fetch(
+      "https://github.com/lawRathod/lawRathod.github.io/raw/alpha/blogs/list.json",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => {
         result = JSON.parse(result);
         console.log(result);
       })
-      .catch(error => console.log('error', error));
-
-
-
-
-
-
-
-
+      .catch((error) => console.log("error", error));
 
     if (!Object.keys(this.state.entries).length) {
       const data = await this.getBlogs(this.db);
@@ -139,12 +134,18 @@ export default class Journal extends React.Component {
               </div>
               <div className="entryTags">
                 <div className="entryTag category">{val.category}</div>
-                {val.tags ? (
-                  val.tags.map((tag) => {
-                    return (<div className="entryTag tag" key={tag}>{tag}</div>)      
-                  })
-                ) :  null  }
-                <div className="entryTag published">{"Published: "+val.date}</div>
+                {val.tags
+                  ? val.tags.map((tag) => {
+                      return (
+                        <div className="entryTag tag" key={tag}>
+                          {tag}
+                        </div>
+                      );
+                    })
+                  : null}
+                <div className="entryTag published">
+                  {"Published: " + val.date}
+                </div>
               </div>
             </div>
           );
