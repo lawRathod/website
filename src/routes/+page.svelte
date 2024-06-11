@@ -25,31 +25,17 @@
 </div>
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Tiny5&display=swap');
-
-	.container {
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		align-items: center;
-
-		font-size: 3rem;
-		font-weight: 600;
-		font-family: 'Tiny5', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-			Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	}
-
 	.list {
 		font-size: 1.5rem;
 	}
 
 	.rest {
-		font-size: 1rem;
+		font-size: 1.2rem;
 	}
 
 	.topLine {
 		width: 100%;
-		height: 2px;
-		background-color: black;
+		height: 3px;
+		background-color: rgb(52, 52, 55);
 	}
 </style>
