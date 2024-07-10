@@ -7,11 +7,10 @@
 </svelte:head>
 
 <div class="container">
-	<div class="topLine" />
 	<div>
 		<p>️Hii there! :)</p>
 	</div>
-	<div class="list">
+	<div class="list text-normal">
 		<p>Pick one:</p>
 		<ul>
 			{#each pages as e}
@@ -25,17 +24,12 @@
 </div>
 
 <style>
-	.list {
-		font-size: 1.5rem;
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
-
 	.rest {
 		font-size: 1.2rem;
-	}
-
-	.topLine {
-		width: 100%;
-		height: 3px;
-		background-color: rgb(52, 52, 55);
 	}
 </style>
