@@ -10,7 +10,7 @@
 		},
 		'square-github': {
 			username: 'lawRathod',
-			url: 'https://github.com/layRathod'
+			url: 'https://github.com/lawRathod'
 		}
 	};
 </script>
