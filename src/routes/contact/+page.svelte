@@ -15,21 +15,18 @@
 	};
 </script>
 
-<div class="container mt-5 d-flex flex-row justify-content-center">
-	<div class="text-normal">
-		<div>
-			{#each Object.keys(profiles) as profile}
-				<div class="row">
-					<div class="col">
-						<i class="fa-brands fa-{profile}" />
-						{profiles[profile].username}
-						<a href={profiles[profile].url} target="_blank"> , visit </a>
-					</div>
+<div class="text-normal">
+	<div>
+		{#each Object.keys(profiles) as profile}
+			<div class="row">
+				<div class="col">
+					{profiles[profile].username}
+					<a href={profiles[profile].url} target="_blank"> , visit </a>
 				</div>
-			{/each}
-		</div>
-		<div class="text-medium mt-3">
-			Buy me a <a href="https://buymeacoffee.com/noodleweb" target="_blank">coffee</a>?
-		</div>
+			</div>
+		{/each}
+	</div>
+	<div class="text-medium mt-3">
+		Buy me a <a href="https://buymeacoffee.com/noodleweb" target="_blank">coffee</a>?
 	</div>
 </div>
