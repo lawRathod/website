@@ -4,12 +4,12 @@
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"prebuild": "git submodule update --init --recursive",
+		"build": "test -d posts && echo \"Directory Exists\" && vite build",
 		"preview": "vite preview",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"prebuild": "git submodule update --init --recursive",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
