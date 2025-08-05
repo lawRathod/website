@@ -8,9 +8,12 @@
 		content="Prateek Rathod is a Full Stack Engineer pursuing MS Computer Science at RPTU Kaiserslautern-Landau, specializing in blockchain, high-performance web services, and cloud engineering."
 	/>
 	<meta name="author" content="Prateek Rathod" />
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
+		rel="stylesheet"
+	/>
 </svelte:head>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -144,7 +147,12 @@
 		align-items: center;
 		justify-content: center;
 		padding: 2rem;
-		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		font-family:
+			'Inter',
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			sans-serif;
 	}
 
 	.hero {

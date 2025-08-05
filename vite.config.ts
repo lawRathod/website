@@ -1,12 +1,8 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
+import { defineConfig } from 'vite';
 
-const config: UserConfig = {
-	plugins: [tailwindcss(), sveltekit()],
-	server: {
-		allowedHosts: true
-	}
-};
-
-export default config;
+export default defineConfig({
+	plugins: [sveltekit(), tailwindcss()],
+	server: { allowedHosts: true }
+});

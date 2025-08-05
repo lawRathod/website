@@ -1,6 +1,6 @@
 <script lang="ts">
 	let jsonInput = '';
-	let parsedJson: any = null;
+	let parsedJson = null;
 	let formattedJson = '';
 	let typescriptTypes = '';
 	let error = '';
@@ -204,7 +204,10 @@
 
 <svelte:head>
 	<title>JSON Viewer - Garage</title>
-	<meta name="description" content="Parse JSON and extract TypeScript types - A development tool by Prateek Rathod" />
+	<meta
+		name="description"
+		content="Parse JSON and extract TypeScript types - A development tool by Prateek Rathod"
+	/>
 </svelte:head>
 
 <div class="container">
@@ -214,7 +217,7 @@
 			<span class="nav-separator">→</span>
 			<a href="/garage" class="nav-link">Garage</a>
 		</nav>
-		
+
 		<h1 class="title">JSON Viewer</h1>
 		<p class="subtitle">Parse JSON and extract TypeScript types</p>
 	</header>
@@ -224,15 +227,11 @@
 			<div class="section-header">
 				<h2 class="section-title">Input</h2>
 				<div class="actions">
-					<button type="button" class="action-btn" on:click={loadSample}>
-						Load Sample
-					</button>
-					<button type="button" class="action-btn" on:click={clearAll}>
-						Clear
-					</button>
+					<button type="button" class="action-btn" on:click={loadSample}> Load Sample </button>
+					<button type="button" class="action-btn" on:click={clearAll}> Clear </button>
 				</div>
 			</div>
-			
+
 			<textarea
 				bind:value={jsonInput}
 				placeholder="Paste your JSON here..."
@@ -240,11 +239,9 @@
 				rows="12"
 				spellcheck="false"
 			></textarea>
-			
+
 			<div class="input-actions">
-				<button type="button" class="parse-btn" on:click={parseJson}>
-					Parse JSON
-				</button>
+				<button type="button" class="parse-btn" on:click={parseJson}> Parse JSON </button>
 			</div>
 		</section>
 
@@ -261,19 +258,19 @@
 			<section class="output-section">
 				<div class="section-header">
 					<div class="tabs">
-						<button 
+						<button
 							type="button"
-							class="tab" 
+							class="tab"
 							class:active={activeTab === 'formatted'}
-							on:click={() => activeTab = 'formatted'}
+							on:click={() => (activeTab = 'formatted')}
 						>
 							Formatted JSON
 						</button>
-						<button 
+						<button
 							type="button"
-							class="tab" 
+							class="tab"
 							class:active={activeTab === 'types'}
-							on:click={() => activeTab = 'types'}
+							on:click={() => (activeTab = 'types')}
 						>
 							TypeScript Types
 						</button>
@@ -302,8 +299,8 @@
 											}}
 										/>
 										{#if searchQuery}
-											<button 
-												type="button" 
+											<button
+												type="button"
 												class="clear-search-btn"
 												on:click={clearSearch}
 												aria-label="Clear search"
@@ -315,8 +312,8 @@
 									{#if searchMatches > 0}
 										<div class="search-navigation">
 											<span class="search-results">{currentMatch}/{searchMatches}</span>
-											<button 
-												type="button" 
+											<button
+												type="button"
 												class="nav-btn"
 												on:click={prevMatch}
 												disabled={searchMatches === 0}
@@ -324,8 +321,8 @@
 											>
 												↑
 											</button>
-											<button 
-												type="button" 
+											<button
+												type="button"
 												class="nav-btn"
 												on:click={nextMatch}
 												disabled={searchMatches === 0}
@@ -336,9 +333,9 @@
 										</div>
 									{/if}
 								</div>
-								<button 
-									type="button" 
-									class="copy-btn" 
+								<button
+									type="button"
+									class="copy-btn"
 									on:click={() => copyToClipboard(formattedJson)}
 									aria-label="Copy formatted JSON"
 								>
@@ -346,7 +343,9 @@
 								</button>
 							</div>
 						</div>
-						<pre class="output-content json-output"><code>{@html highlightedJson || formattedJson}</code></pre>
+						<pre class="output-content json-output"><code
+								>{@html highlightedJson || formattedJson}</code
+							></pre>
 					</div>
 				{/if}
 
@@ -354,9 +353,9 @@
 					<div class="output-wrapper">
 						<div class="output-header">
 							<span class="output-label">TypeScript Interface</span>
-							<button 
-								type="button" 
-								class="copy-btn" 
+							<button
+								type="button"
+								class="copy-btn"
 								on:click={() => copyToClipboard(typescriptTypes)}
 								aria-label="Copy TypeScript types"
 							>
@@ -377,7 +376,12 @@
 		padding: 2rem;
 		max-width: 1200px;
 		margin: 0 auto;
-		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		font-family:
+			'Inter',
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			sans-serif;
 	}
 
 	.header {

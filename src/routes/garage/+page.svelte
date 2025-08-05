@@ -29,7 +29,12 @@
 		padding: 2rem;
 		max-width: 800px;
 		margin: 0 auto;
-		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		font-family:
+			'Inter',
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			sans-serif;
 	}
 
 	.header {

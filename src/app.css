@@ -20,7 +20,7 @@
 	--shadow-color: rgba(3, 169, 244, 0.2);
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
 	--theme-color: #00d4ff;
 	--theme-color-dark: #03a9f4;
 	--bg-primary: #0a0a0a;
@@ -33,7 +33,10 @@
 }
 
 * {
-	transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+	transition:
+		background-color 0.3s ease,
+		color 0.3s ease,
+		border-color 0.3s ease;
 }
 
 html {

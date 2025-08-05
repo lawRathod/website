@@ -6,7 +6,10 @@
 
 <svelte:head>
 	<title>{data.post.title} - Prateek Rathod</title>
-	<meta name="description" content={data.post.description || `Read ${data.post.title} by Prateek Rathod`} />
+	<meta
+		name="description"
+		content={data.post.description || `Read ${data.post.title} by Prateek Rathod`}
+	/>
 	{#if data.post.date}
 		<meta property="article:published_time" content={data.post.date} />
 	{/if}
@@ -19,7 +22,7 @@
 			<span class="nav-separator">→</span>
 			<a href="/posts" class="nav-link" aria-label="Go to posts page">Posts</a>
 		</nav>
-		
+
 		<article class="post-meta">
 			<h1 class="post-title">{data.post.title}</h1>
 			{#if data.post.date}
@@ -58,7 +61,12 @@
 		padding: 2rem;
 		max-width: 800px;
 		margin: 0 auto;
-		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+		font-family:
+			'Inter',
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			sans-serif;
 	}
 
 	.header {

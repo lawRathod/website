@@ -5,11 +5,13 @@ Ultra-minimal, professional personal website built with SvelteKit. Features a cl
 ## 🎯 Features
 
 ### 📄 **Pages**
+
 - **Homepage** - Professional introduction with key interests and contact info
 - **Posts** - Markdown blog with frontmatter support and clean typography
 - **Garage** - Development tools and utilities
 
 ### 🔧 **Tools**
+
 - **JSON Viewer** - Parse JSON, format output, and extract TypeScript interfaces
   - Real-time JSON validation and formatting
   - TypeScript type generation from JSON structure
@@ -17,6 +19,7 @@ Ultra-minimal, professional personal website built with SvelteKit. Features a cl
   - Copy to clipboard support
 
 ### 🎨 **Design**
+
 - **Ultra-minimal** aesthetic with professional typography
 - **Three-font system**: Crimson Text (serif), Inter (sans-serif), JetBrains Mono (monospace)
 - **Fully accessible** with WCAG 2.1 AA compliance
@@ -24,6 +27,7 @@ Ultra-minimal, professional personal website built with SvelteKit. Features a cl
 - **Dark/light theme** with system preference detection
 
 ### 📝 **Content**
+
 - **Markdown blog** with YAML frontmatter
 - **Automatic post parsing** and metadata extraction
 - **Tag support** and date-based sorting
