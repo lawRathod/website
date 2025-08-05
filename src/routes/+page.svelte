@@ -2,12 +2,15 @@
 </script>
 
 <svelte:head>
-	<title>Prateek Rathod - Full Stack Engineer</title>
+	<title>Hey! 👋 It's Prateek :D</title>
 	<meta
 		name="description"
 		content="Prateek Rathod is a Full Stack Engineer pursuing MS Computer Science at RPTU Kaiserslautern-Landau, specializing in blockchain, high-performance web services, and cloud engineering."
 	/>
 	<meta name="author" content="Prateek Rathod" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </svelte:head>
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -134,12 +137,14 @@
 		border: 0;
 	}
 
+	/* Font system */
 	.container {
 		min-height: 100vh;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		padding: 2rem;
+		font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 	}
 
 	.hero {
@@ -149,18 +154,22 @@
 	}
 
 	.name {
-		font-size: 2.5rem;
+		font-family: 'Crimson Text', Georgia, serif;
+		font-size: 2.8rem;
 		font-weight: 600;
 		color: var(--text-primary);
-		letter-spacing: -0.02em;
+		letter-spacing: -0.01em;
+		line-height: 1.1;
 	}
 
 	.passion {
-		font-size: 1rem;
+		font-family: 'Crimson Text', Georgia, serif;
+		font-size: 1.1rem;
 		color: var(--text-secondary);
 		margin-bottom: 2rem;
 		font-weight: 400;
 		font-style: italic;
+		line-height: 1.4;
 	}
 
 	.pages {
@@ -228,6 +237,7 @@
 	}
 
 	.section-title {
+		font-family: 'Inter', sans-serif;
 		font-size: 1rem;
 		font-weight: 600;
 		color: var(--text-primary);
@@ -236,6 +246,7 @@
 	}
 
 	.label {
+		font-family: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
 		font-size: 0.75rem;
 		color: var(--text-secondary);
 		font-weight: 500;
@@ -303,9 +314,11 @@
 	}
 
 	.contact-platform {
-		font-size: 0.875rem;
+		font-family: 'JetBrains Mono', monospace;
+		font-size: 0.8rem;
 		color: var(--text-secondary);
 		font-weight: 500;
+		letter-spacing: 0.02em;
 	}
 
 	.contact-handle {
