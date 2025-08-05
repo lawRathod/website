@@ -3,7 +3,10 @@ import type { UserConfig } from 'vite';
 import tailwindcss from '@tailwindcss/vite';
 
 const config: UserConfig = {
-	plugins: [tailwindcss(), sveltekit()]
+	plugins: [tailwindcss(), sveltekit()],
+	server: {
+		allowedHosts: true
+	}
 };
 
 export default config;
