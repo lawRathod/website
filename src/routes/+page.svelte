@@ -2,14 +2,14 @@
 </script>
 
 <svelte:head>
-	<title>Hey! 👋 It's Prateek :D</title>
+	<title>You Found Me!</title>
 	<meta
 		name="description"
 		content="Prateek Rathod is a Full Stack Engineer pursuing MS Computer Science at RPTU Kaiserslautern-Landau, specializing in blockchain, high-performance web services, and cloud engineering."
 	/>
 	<meta name="author" content="Prateek Rathod" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </svelte:head>
 
@@ -73,7 +73,7 @@
 				<li class="contact-item">
 					<span class="contact-platform">GitHub</span>
 					<a
-						href="https://github.com/prateekrathod"
+						href="https://github.com/lawrathod"
 						class="contact-handle"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -93,7 +93,7 @@
 				<li class="contact-item">
 					<span class="contact-platform">X</span>
 					<a
-						href="https://x.com/prateekrathod"
+						href="https://x.com/praaaateeeek"
 						class="contact-handle"
 						target="_blank"
 						rel="noopener noreferrer"
