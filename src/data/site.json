@@ -1,0 +1,43 @@
+{
+  "name": "prats.page",
+  "description": "No Description",
+  "url": "https://prats.page",
+  "author": {
+    "name": "Prateek Rathod",
+    "email": "emaillawrathod@gmail.com",
+    "twitterHandle": "praaaateeeek"
+  },
+  "defaultSocialImage": "/images/default-social-image.png",
+  "headerLinks": [
+    {
+      "text": "Blog",
+      "url": "/blog",
+      "external": false
+    },
+    {
+      "text": "About",
+      "url": "/about",
+      "external": false
+    }
+  ],
+  "socialLinks": [
+    {
+      "text": "GitHub",
+      "url": "https://github.com/lawRathod",
+      "external": true
+    },
+    {
+      "text": "Twitter",
+      "url": "https://twitter.com/praaaateeeek",
+      "external": true
+    }
+  ],
+  "footerLinks": [
+    {
+      "text": "RSS",
+      "url": "/feed.xml",
+      "external": true
+    }
+  ],
+  "showFooterAttribution": true
+}
