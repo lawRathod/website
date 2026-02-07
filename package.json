@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "prettier . -w"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
@@ -18,4 +19,3 @@
     "sharp": "^0.34.3"
   }
 }
-
