@@ -5,7 +5,8 @@
   "author": {
     "name": "Prateek Rathod",
     "email": "emaillawrathod@gmail.com",
-    "twitterHandle": "praaaateeeek"
+    "twitterHandle": "praaaateeeek",
+    "blueskyHandle": "noodleweb.bsky.social"
   },
   "defaultSocialImage": "/images/default-social-image.png",
   "headerLinks": [
@@ -29,6 +30,11 @@
     {
       "text": "Twitter",
       "url": "https://twitter.com/praaaateeeek",
+      "external": true
+    },
+    {
+      "text": "bsky",
+      "url": "https://bsky.app/profile/noodleweb.bsky.social",
       "external": true
     }
   ],

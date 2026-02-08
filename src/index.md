@@ -1,8 +1,8 @@
 ---
 layout: home
-title: 'Prateeks Blogsite'
+title: "Scratchpad"
 ---
 
-# Hello World
+# Hello World :)
 
-Welcome to the blog of Prateek Rathod!
+You have found the mindspace (scratchpad) of _<ins>Prateek Rathod</ins>_. I like to share about things I am learning or unlearning. If there's an AI uprising, I will pretend to be a bot.
