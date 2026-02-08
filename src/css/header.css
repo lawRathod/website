@@ -44,7 +44,7 @@
 }
 
 .nav__list a {
-  color: var(--color-hyperlink);
+  /* color: var(--color-hyperlink); */
   text-decoration: none;
   margin-top: 1rem;
   margin-bottom: 1rem;

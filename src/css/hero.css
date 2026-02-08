@@ -18,7 +18,7 @@
   list-style-type: none;
   margin-top: 2rem;
   text-transform: uppercase;
-  color: var(--color-hyperlink);
+  /* color: var(--color-hyperlink); */
 }
 
 .hero__social-links > li {
