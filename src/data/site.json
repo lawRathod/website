@@ -8,7 +8,7 @@
     "twitterHandle": "praaaateeeek",
     "blueskyHandle": "noodleweb.bsky.social"
   },
-  "defaultSocialImage": "/images/default-social-image.png",
+  "defaultSocialImage": "/images/default-social-image.webp",
   "headerLinks": [
     {
       "text": "Blog",
