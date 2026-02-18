@@ -38,7 +38,9 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPassthroughCopy({ 'src/images': 'images' });
-  eleventyConfig.setBrowserSyncConfig({ files: [manifestPath] });
+  eleventyConfig.setBrowserSyncConfig({ 
+    files: [manifestPath, './public/assets/main.css'] 
+  });
 
   eleventyConfig.addShortcode('bundledcss', function () {
     return manifest['main.css']
