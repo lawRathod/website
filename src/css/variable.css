@@ -1,19 +1,19 @@
 :root {
-  --accent: #0074d9;
-  --background: #fffffe;
-  --color: rgb(41, 41, 41);
-  --color-80: rgba(41, 41, 41, 0.8);
-  --color-30: rgba(41, 41, 41, 0.3);
-  --color-10: rgba(41, 41, 41, 0.1);
-  --color-hyperlink: #03a1fc;
+	--accent: #0074d9;
+	--background: #fffffe;
+	--color: rgb(41, 41, 41);
+	--color-80: rgba(41, 41, 41, 0.8);
+	--color-30: rgba(41, 41, 41, 0.3);
+	--color-10: rgba(41, 41, 41, 0.1);
+	--color-hyperlink: #03a1fc;
 }
 
 [data-theme="dark"] {
-  --accent: #6eb5ff;
-  --background: #0f1419;
-  --color: rgb(230, 230, 230);
-  --color-80: rgba(230, 230, 230, 0.8);
-  --color-30: rgba(230, 230, 230, 0.3);
-  --color-10: rgba(230, 230, 230, 0.1);
-  --color-hyperlink: #6eb5ff;
+	--accent: #6eb5ff;
+	--background: #0f1419;
+	--color: rgb(230, 230, 230);
+	--color-80: rgba(230, 230, 230, 0.8);
+	--color-30: rgba(230, 230, 230, 0.3);
+	--color-10: rgba(230, 230, 230, 0.1);
+	--color-hyperlink: #6eb5ff;
 }
