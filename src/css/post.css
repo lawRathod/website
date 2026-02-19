@@ -54,3 +54,43 @@
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 }
+
+.post__toc {
+	margin-bottom: 2rem;
+	padding: 1rem 1.5rem;
+	border-left: 3px solid var(--accent);
+	background-color: var(--color-10);
+	border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.post__toc h2 {
+	margin: 0 0 0.75rem 0;
+	font-size: 1rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+.post__toc ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.post__toc li {
+	margin: 0.25rem 0;
+}
+
+.post__toc a {
+	color: var(--color-80);
+	text-decoration: none;
+	font-size: 0.9rem;
+}
+
+.post__toc a:hover {
+	color: var(--accent);
+}
+
+.post__toc ul ul {
+	margin-left: 1rem;
+	margin-top: 0.25rem;
+}

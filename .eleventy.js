@@ -2,6 +2,9 @@ const { DateTime } = require("luxon");
 const readingTime = require("eleventy-plugin-reading-time");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginTOC = require("eleventy-plugin-toc");
+const markdownIt = require("markdown-it");
+const markdownItAnchor = require("markdown-it-anchor");
 const fs = require("fs");
 const path = require("path");
 
@@ -22,10 +25,16 @@ const manifest = isDev
 		}
 	: JSON.parse(fs.readFileSync(manifestPath, { encoding: "utf8" }));
 
-module.exports = function (eleventyConfig) {
+module.exports = (eleventyConfig) => {
 	eleventyConfig.addPlugin(readingTime);
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(syntaxHighlight);
+	eleventyConfig.addPlugin(pluginTOC);
+
+	eleventyConfig.setLibrary(
+		"md",
+		markdownIt({ html: true }).use(markdownItAnchor),
+	);
 
 	// setup mermaid markdown highlighter
 	const highlighter = eleventyConfig.markdownHighlighter;
@@ -42,17 +51,15 @@ module.exports = function (eleventyConfig) {
 		files: [manifestPath, "./public/assets/main.css"],
 	});
 
-	eleventyConfig.addShortcode("bundledcss", function () {
-		return manifest["main.css"]
+	eleventyConfig.addShortcode("bundledcss", () =>
+		manifest["main.css"]
 			? `<link href="${manifest["main.css"]}" rel="stylesheet" />`
-			: "";
-	});
+			: "",
+	);
 
-	eleventyConfig.addShortcode("bundledjs", function () {
-		return manifest["main.js"]
-			? `<script src="${manifest["main.js"]}"></script>`
-			: "";
-	});
+	eleventyConfig.addShortcode("bundledjs", () =>
+		manifest["main.js"] ? `<script src="${manifest["main.js"]}"></script>` : "",
+	);
 
 	eleventyConfig.addFilter("excerpt", (post) => {
 		const content = post.replace(/(<([^>]+)>)/gi, "");
@@ -81,13 +88,13 @@ module.exports = function (eleventyConfig) {
 		return array.slice(0, n);
 	});
 
-	eleventyConfig.addCollection("tagList", function (collection) {
-		let tagSet = new Set();
-		collection.getAll().forEach(function (item) {
+	eleventyConfig.addCollection("tagList", (collection) => {
+		const tagSet = new Set();
+		collection.getAll().forEach((item) => {
 			if ("tags" in item.data) {
 				let tags = item.data.tags;
 
-				tags = tags.filter(function (item) {
+				tags = tags.filter((item) => {
 					switch (item) {
 						case "all":
 						case "nav":

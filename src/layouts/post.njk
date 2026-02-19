@@ -15,6 +15,16 @@ layout: base.njk
   </header>
 
   <main class="post__content">
+    {% if toc %}
+    {% set tocOptions = tocTags | default('["h2","h3","h4"]') %}
+    {% set tocContent = content | toc('{"tags":' + tocOptions + '}') %}
+    {% if tocContent %}
+    <nav class="post__toc">
+      <h2>Table of Contents</h2>
+      {{ tocContent | safe }}
+    </nav>
+    {% endif %}
+    {% endif %}
     {{ content | safe }}
   </main>
 
