@@ -1,12 +1,10 @@
 ---
 title: "PDWM - Personal DWM Fork"
-date: "2021-03-20" 
+date: "2021-03-20"
 description: "My customized dwm setup with patches for a more practical and visually pleasing Linux window manager"
 tags: ["dwm", "linux", "window-manager", "suckless", "customization"]
 published: true
 ---
-
-# pdwm
 
 A personal dwm fork with a more practical and visually pleasing setup. It's just a bunch of patches and a few personal changes to the source. My [fork](https://github.com/lawRathod/pdwm).
 

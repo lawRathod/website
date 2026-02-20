@@ -8,6 +8,10 @@
 	margin-top: 4rem;
 }
 
+.post__header + .post__content {
+	margin-top: 2rem;
+}
+
 .post__details {
 	opacity: 0.6;
 	font-size: 0.9rem;
@@ -19,6 +23,40 @@
 
 .post__content {
 	word-wrap: break-word;
+}
+
+.post__content--with-toc {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+	.post__content--with-toc {
+		grid-template-columns: 1fr 220px;
+		align-items: start;
+	}
+}
+
+.post__content--with-toc .post__toc {
+	order: 1;
+}
+
+.post__content--with-toc .post__body {
+	order: 2;
+}
+
+@media (min-width: 1024px) {
+	.post__content--with-toc .post__toc {
+		order: 2;
+		position: sticky;
+		top: 2rem;
+		align-self: start;
+	}
+
+	.post__content--with-toc .post__body {
+		order: 1;
+	}
 }
 
 .post__aside {
@@ -50,47 +88,91 @@
 	display: flex;
 	align-items: center;
 }
+
 .post__pagination span {
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 }
 
 .post__toc {
-	margin-bottom: 2rem;
-	padding: 1rem 1.5rem;
-	border-left: 3px solid var(--accent);
-	background-color: var(--color-10);
-	border-radius: 0 0.5rem 0.5rem 0;
+	display: none;
+}
+
+@media (min-width: 1024px) {
+	.post__toc {
+		display: block;
+		margin-bottom: 0;
+		padding: 0 0 0 1rem;
+		border-left: 1px solid var(--color-30);
+	}
 }
 
 .post__toc h2 {
 	margin: 0 0 0.75rem 0;
-	font-size: 1rem;
+	font-size: 0.7rem;
 	text-transform: uppercase;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.1em;
+	font-weight: 500;
+	color: var(--color-80);
 }
 
+.post__toc ol,
 .post__toc ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
+.post__toc > nav > ol > li {
+	margin: 0.75rem 0;
+}
+
+.post__toc > nav > ol > li > a {
+	font-weight: 500;
+}
+
 .post__toc li {
-	margin: 0.25rem 0;
+	margin: 0.4rem 0;
 }
 
 .post__toc a {
 	color: var(--color-80);
 	text-decoration: none;
-	font-size: 0.9rem;
+	font-size: 0.85rem;
+	display: inline-block;
+	position: relative;
+	transition: all 200ms ease;
+}
+
+.post__toc a::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background-color: var(--accent);
+	transition: width 200ms ease;
 }
 
 .post__toc a:hover {
 	color: var(--accent);
 }
 
+.post__toc a:hover::before {
+	width: 100%;
+}
+
+.post__toc ol ol,
 .post__toc ul ul {
 	margin-left: 1rem;
-	margin-top: 0.25rem;
+	margin-top: 0.3rem;
+	border-left: 1px solid var(--color-30);
+	padding-left: 0.6rem;
+}
+
+.post__toc ol ol a,
+.post__toc ul ul a {
+	font-size: 0.8rem;
+	font-weight: 400;
 }

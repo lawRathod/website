@@ -1,8 +1,8 @@
 ---
-title: 'Membership Inference Attacks on Graph Neural Networks'
-date: '2025-09-11'
-description: 'Implementing a framework to test how vulnerable Graph Neural Networks are to membership inference attacks - can attackers determine if your data was used to train a model?'
-tags: ['machine-learning', 'privacy', 'gnn', 'security', 'pytorch']
+title: "Membership Inference Attacks on Graph Neural Networks"
+date: "2025-09-11"
+description: "Implementing a framework to test how vulnerable Graph Neural Networks are to membership inference attacks - can attackers determine if your data was used to train a model?"
+tags: ["machine-learning", "privacy", "gnn", "security", "pytorch"]
 published: true
 ---
 

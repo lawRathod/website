@@ -14,18 +14,20 @@ layout: base.njk
     </div>
   </header>
 
-  <main class="post__content">
+  <main class="post__content{% if toc %} post__content--with-toc{% endif %}">
     {% if toc %}
     {% set tocOptions = tocTags | default('["h2","h3","h4"]') %}
     {% set tocContent = content | toc('{"tags":' + tocOptions + '}') %}
     {% if tocContent %}
     <nav class="post__toc">
-      <h2>Table of Contents</h2>
+      <h2>On this page</h2>
       {{ tocContent | safe }}
     </nav>
     {% endif %}
     {% endif %}
-    {{ content | safe }}
+    <div class="post__body">
+      {{ content | safe }}
+    </div>
   </main>
 
   <aside class="post__aside">

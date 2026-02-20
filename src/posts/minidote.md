@@ -14,8 +14,6 @@ slug: building-minidote-distributed-crdt-system
 github: https://github.com/lawRathod/minidote
 ---
 
-# Building Minidote: A Distributed CRDT System in Elixir
-
 Distributed systems are hard. The moment you have multiple nodes trying to maintain consistent state, you face the classic CAP theorem tradeoffs. Do you sacrifice availability for consistency, or vice versa? What if you could have both?
 
 That's where **CRDTs** (Conflict-free Replicated Data Types) come in, and why I built **Minidote** - an Elixir implementation of a distributed CRDT system with causal broadcast guarantees.
