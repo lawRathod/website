@@ -32,3 +32,56 @@
 		window.scrollTo({ top: 0, behavior: "smooth" });
 	});
 })();
+
+(() => {
+	const toc = document.querySelector(".post__toc");
+	if (!toc) return;
+
+	const tocLinks = toc.querySelectorAll("a");
+	const headings = [];
+	const headingMap = {};
+
+	tocLinks.forEach((link) => {
+		const href = link.getAttribute("href");
+		if (href && href.startsWith("#")) {
+			const id = href.slice(1);
+			const heading = document.getElementById(id);
+			if (heading) {
+				headings.push(heading);
+				headingMap[id] = link;
+			}
+		}
+	});
+
+	if (headings.length === 0) return;
+
+	let activeLink = null;
+
+	const updateActive = () => {
+		const scrollY = window.scrollY;
+		const offset = 100;
+
+		let current = null;
+		for (let i = headings.length - 1; i >= 0; i--) {
+			if (headings[i].offsetTop - offset <= scrollY) {
+				current = headings[i];
+				break;
+			}
+		}
+
+		const newActiveLink = current ? headingMap[current.id] : null;
+
+		if (newActiveLink !== activeLink) {
+			if (activeLink) {
+				activeLink.classList.remove("is-active");
+			}
+			if (newActiveLink) {
+				newActiveLink.classList.add("is-active");
+			}
+			activeLink = newActiveLink;
+		}
+	};
+
+	window.addEventListener("scroll", updateActive, { passive: true });
+	updateActive();
+})();

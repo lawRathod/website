@@ -58,8 +58,9 @@ It serves as a comprehensive archive of my coursework.
 ## Programming Distributed Systems
 
 **Project: MiniDote – Distributed Key-Value Store**  
-Repository: <https://github.com/lawRathod/minidote>  
-Report: [MiniDote Project Report – To Be Added]
+Repository: <https://github.com/lawRathod/minidote>
+
+<!-- Report: [MiniDote Project Report – To Be Added] -->
 
 ### Covered Topics
 
@@ -107,8 +108,9 @@ Report: [MiniDote Project Report – To Be Added]
 ## Decentralized Systems
 
 **Project: IPFS Lab & Kubo Modification**  
-Repository: <https://github.com/lawRathod/ipfs-lab>  
-Report: [IPFS Lab Report – To Be Added]
+Repository: <https://github.com/lawRathod/ipfs-lab>
+
+<!-- Report: [IPFS Lab Report – To Be Added] -->
 
 ### Covered Topics
 
@@ -129,8 +131,9 @@ Report: [IPFS Lab Report – To Be Added]
 
 ## Project: Secure Decentralized Systems
 
-Repository: <https://github.com/lawRathod/uni-project-dec>  
-Report: [Secure Decentralized Systems Report – To Be Added]
+Repository: <https://github.com/lawRathod/uni-project-dec>
+
+<!-- Report: [Secure Decentralized Systems Report – To Be Added] -->
 
 ### Covered Topics
 
@@ -167,7 +170,7 @@ Report: [Secure Decentralized Systems Report – To Be Added]
 
 ## Seminar: Privacy and Security
 
-Report: [Asynchronous Vertical Federated Learning Survey – To Be Added]
+<!-- Report: [Asynchronous Vertical Federated Learning Survey – To Be Added] -->
 
 ### Seminar Focus
 
