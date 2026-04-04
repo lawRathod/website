@@ -8,6 +8,7 @@
 @import "footer.css";
 @import "post.css";
 @import "about.css";
+@import "experiments.css";
 
 .layout-wrapper {
 	display: grid;
@@ -25,6 +26,7 @@
 	max-width: 48.75rem;
 	margin-left: auto;
 	margin-right: auto;
+	width: 100%;
 }
 
 .back-to-top {
@@ -33,22 +35,19 @@
 	right: calc(50% - 48.75rem / 2 - 3rem);
 	width: 2.5rem;
 	height: 2.5rem;
-	border: 2px solid var(--color-30);
-	border-radius: 0.5rem;
-	background-color: transparent;
-	color: var(--color);
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+	background-color: var(--surface);
+	color: var(--color-secondary);
 	cursor: pointer;
 	opacity: 0;
 	visibility: hidden;
-	transition:
-		opacity 0.3s,
-		visibility 0.3s,
-		transform 0.3s,
-		border-color 0.3s;
+	transition: all var(--transition);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	z-index: 1000;
+	box-shadow: var(--shadow-sm);
 }
 
 .back-to-top.visible {
@@ -57,11 +56,13 @@
 }
 
 .back-to-top:hover {
-	transform: translateY(-3px);
-	border-color: var(--color-80);
+	transform: translateY(-2px);
+	border-color: var(--accent-border);
+	color: var(--accent);
+	box-shadow: var(--shadow-md);
 }
 
 .back-to-top svg {
-	width: 1.25rem;
-	height: 1.25rem;
+	width: 1.125rem;
+	height: 1.125rem;
 }

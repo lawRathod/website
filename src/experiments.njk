@@ -1,0 +1,39 @@
+---
+layout: base.njk
+permalink: /experiments/
+title: Experiments
+---
+
+<div class="experiments-page">
+  <h1>Experiments</h1>
+  <p>Side projects, prototypes, and things I've built to learn and explore.</p>
+
+  <div class="experiments-grid">
+    {% for experiment in collections.experiments %}
+    <article class="experiment-card">
+      <h2 class="experiment-card__title">{{ experiment.data.title }}</h2>
+      <p class="experiment-card__description">{{ experiment.data.description }}</p>
+      <div class="experiment-card__links">
+        {% if experiment.data.github %}
+        <a href="{{ experiment.data.github }}" class="experiment-card__link experiment-card__link--github" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          GitHub
+        </a>
+        {% endif %}
+        {% if experiment.data.blog %}
+        <a href="{{ experiment.data.blog | url }}" class="experiment-card__link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
+          Blog
+        </a>
+        {% endif %}
+        {% if experiment.data.web %}
+        <a href="{{ experiment.data.web }}" class="experiment-card__link" target="_blank" rel="noopener noreferrer">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          Live Demo
+        </a>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</div>

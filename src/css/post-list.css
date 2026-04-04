@@ -1,113 +1,178 @@
 .tags > * {
-	margin-right: 1rem;
-	margin-top: 0.5rem;
+	margin-right: 0.5rem;
+	margin-top: 0.375rem;
 }
 
 .tags {
 	margin-top: 1rem;
 	font-size: var(--text-sm);
 	margin-bottom: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
 }
 
 .tags a {
+	display: inline-block;
+	padding: 0.25rem 0.625rem;
+	background: var(--accent-subtle);
+	border: 1px solid var(--accent-border);
+	border-radius: 9999px;
+	color: var(--accent);
 	text-decoration: none;
-	color: var(--color-80);
+	font-size: var(--text-xs);
+	font-weight: 500;
+	transition: all var(--transition);
+}
+
+.tags a:hover {
+	background: var(--accent);
+	color: white;
+	border-color: var(--accent);
 }
 
 .post-list__wrapper {
-	margin-top: 4rem;
+	margin-top: 3rem;
 }
 
 .post-list__heading {
-	font-size: var(--text-3xl);
-	margin-bottom: 1rem;
+	font-size: var(--text-2xl);
+	margin-bottom: 1.5rem;
+	letter-spacing: -0.02em;
 }
 
 .post-list {
 	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 }
 
 .post-list__item {
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 1.5rem;
-	padding-top: 1.5rem;
-	border-top: 1px solid var(--color-10);
+	padding: 1.25rem 1.5rem;
+	border: 1px solid var(--border);
+	border-radius: var(--radius-md);
+	background: var(--surface);
+	transition: all var(--transition);
+}
+
+.post-list__item:hover {
+	border-color: var(--accent-border);
+	box-shadow: var(--shadow-md);
+	transform: translateY(-1px);
 }
 
 .post-list__item:last-child {
-	border-bottom: 1px solid var(--color-10);
-}
-
-.post-list__title {
-	font-size: var(--text-2xl);
-	margin-top: 0.5rem;
-}
-
-.post-list__title a {
-	font-weight: normal;
-	text-decoration: none;
-	color: var(--color);
-}
-
-.post-list__title a:hover {
-	/* color: var(--accent); */
-	text-decoration: underline;
+	border-bottom: 1px solid var(--border);
 }
 
 .post-list__meta {
-	font-size: var(--text-sm);
-	margin-top: 1rem;
-	color: var(--color-80);
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: var(--text-xs);
+	color: var(--color-muted);
+	margin-bottom: 0.5rem;
 }
 
 .post-list__meta > * + * {
-	margin-left: 1rem;
+	margin-left: 0;
 }
 
-.post-list__tags {
+.post-list__meta time {
+	font-weight: 500;
+}
+
+.post-list__title {
+	font-size: var(--text-xl);
+	margin-top: 0.25rem;
+	letter-spacing: -0.01em;
+}
+
+.post-list__title a {
+	font-weight: 500;
 	text-decoration: none;
-	font-size: var(--text-sm);
-	margin-top: 0.5rem;
+	color: var(--color);
+	transition: color var(--transition);
 }
 
-.post-list__tags a {
-	text-decoration: none;
-	color: var(--color-80);
-}
-
-.post-list__tags a:hover {
+.post-list__title a:hover {
 	color: var(--accent);
 }
 
-.post-list__tags > * + * {
-	margin-left: 1rem;
+.post-list__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.375rem;
+	margin-top: 0.625rem;
+}
+
+.post-list__tags a {
+	display: inline-block;
+	padding: 0.1875rem 0.5rem;
+	background: var(--accent-subtle);
+	border-radius: 9999px;
+	color: var(--accent);
+	text-decoration: none;
+	font-size: var(--text-xs);
+	font-weight: 500;
+	transition: all var(--transition);
+}
+
+.post-list__tags a:hover {
+	background: var(--accent);
+	color: white;
 }
 
 .post-list__excerpt {
-	margin-top: 1rem;
-	color: var(--color-80);
+	margin-top: 0.75rem;
+	color: var(--color-secondary);
+	font-size: var(--text-base);
+	line-height: 1.6;
 }
 
 .post-list__read-more {
 	width: fit-content;
-	font-size: 1rem;
-	text-transform: capitalize;
+	font-size: var(--text-sm);
+	font-weight: 500;
 	margin-top: 1rem;
-	text-decoration: underline;
+	color: var(--accent);
+	text-decoration: none;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	transition: gap var(--transition);
+}
+
+.post-list__read-more::after {
+	content: "→";
+	transition: transform var(--transition);
 }
 
 .post-list__read-more:hover {
-	text-decoration: underline;
+	gap: 0.5rem;
 }
 
 .all-posts-link {
 	margin-top: 2rem;
-	width: fit-content;
-	display: inline-block;
-	margin-left: auto;
-	margin-right: auto;
-	font-size: var(--text-lg);
-	text-decoration: underline;
-	color: currentColor;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.375rem;
+	font-size: var(--text-base);
+	font-weight: 500;
+	color: var(--accent);
+	text-decoration: none;
+	padding: 0.625rem 1.25rem;
+	border: 1px solid var(--accent-border);
+	border-radius: var(--radius-md);
+	background: var(--accent-subtle);
+	transition: all var(--transition);
+}
+
+.all-posts-link:hover {
+	background: var(--accent);
+	color: white;
+	border-color: var(--accent);
 }

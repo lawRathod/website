@@ -16,6 +16,11 @@
 			"external": false
 		},
 		{
+			"text": "Experiments",
+			"url": "/experiments",
+			"external": false
+		},
+		{
 			"text": "About",
 			"url": "/about",
 			"external": false

@@ -91,6 +91,10 @@ export default function (eleventyConfig) {
 		return array.slice(0, n);
 	});
 
+	eleventyConfig.addCollection("experiments", (collection) => {
+		return collection.getFilteredByGlob("src/experiments/*.md");
+	});
+
 	eleventyConfig.addCollection("tagList", (collection) => {
 		const tagSet = new Set();
 		collection.getAll().forEach((item) => {
