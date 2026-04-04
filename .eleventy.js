@@ -1,15 +1,18 @@
-const { DateTime } = require("luxon");
-const readingTime = require("eleventy-plugin-reading-time");
-const pluginRss = require("@11ty/eleventy-plugin-rss");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
-const pluginTOC = require("eleventy-plugin-toc");
-const markdownIt = require("markdown-it");
-const markdownItAnchor = require("markdown-it-anchor");
-const fs = require("fs");
-const path = require("path");
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import pluginRss from "@11ty/eleventy-plugin-rss";
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import readingTime from "eleventy-plugin-reading-time";
+import pluginTOC from "eleventy-plugin-toc";
+import { DateTime } from "luxon";
+import markdownIt from "markdown-it";
+import markdownItAnchor from "markdown-it-anchor";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const isDev = process.env.ELEVENTY_ENV === "development";
-const isProd = process.env.ELEVENTY_ENV === "production";
 
 const manifestPath = path.resolve(
 	__dirname,
@@ -25,7 +28,7 @@ const manifest = isDev
 		}
 	: JSON.parse(fs.readFileSync(manifestPath, { encoding: "utf8" }));
 
-module.exports = (eleventyConfig) => {
+export default function (eleventyConfig) {
 	eleventyConfig.addPlugin(readingTime);
 	eleventyConfig.addPlugin(pluginRss);
 	eleventyConfig.addPlugin(syntaxHighlight);
@@ -63,7 +66,7 @@ module.exports = (eleventyConfig) => {
 
 	eleventyConfig.addFilter("excerpt", (post) => {
 		const content = post.replace(/(<([^>]+)>)/gi, "");
-		return content.substr(0, content.lastIndexOf(" ", 200)) + "...";
+		return content.slice(0, content.lastIndexOf(" ", 200)) + "...";
 	});
 
 	eleventyConfig.addFilter("readableDate", (dateObj) => {
@@ -139,4 +142,4 @@ module.exports = (eleventyConfig) => {
 		htmlTemplateEngine: "njk",
 		markdownTemplateEngine: "njk",
 	};
-};
+}
