@@ -2,7 +2,7 @@
 	"name": "website",
 	"image": "mcr.microsoft.com/devcontainers/javascript-node:22",
 	"features": {
-    "ghcr.io/devcontainers-extra/features/bun:1": {}
+		"ghcr.io/devcontainers-extra/features/bun:1": {}
 	},
 	"forwardPorts": [8080],
 	"postCreateCommand": "bun install",
