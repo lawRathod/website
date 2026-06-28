@@ -8,7 +8,7 @@
 @import "footer.css";
 @import "post.css";
 @import "about.css";
-@import "experiments.css";
+@import "shipped.css";
 
 .layout-wrapper {
 	display: grid;

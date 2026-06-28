@@ -79,6 +79,10 @@ export default function (eleventyConfig) {
 		return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
 	});
 
+	eleventyConfig.addFilter("monthYearDate", (dateObj) => {
+		return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("LLL yyyy");
+	});
+
 	eleventyConfig.addFilter("dateToIso", (dateString) => {
 		return new Date(dateString).toISOString();
 	});
@@ -91,8 +95,8 @@ export default function (eleventyConfig) {
 		return array.slice(0, n);
 	});
 
-	eleventyConfig.addCollection("experiments", (collection) => {
-		return collection.getFilteredByGlob("src/experiments/*.md");
+	eleventyConfig.addCollection("shipped", (collection) => {
+		return collection.getFilteredByGlob("src/shipped/*.md");
 	});
 
 	eleventyConfig.addCollection("tagList", (collection) => {
