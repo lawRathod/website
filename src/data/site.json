@@ -41,6 +41,11 @@
 			"text": "bsky",
 			"url": "https://bsky.app/profile/noodleweb.bsky.social",
 			"external": true
+		},
+		{
+			"text": "Email",
+			"url": "mailto:hello@prats.page",
+			"external": true
 		}
 	],
 	"footerLinks": [
