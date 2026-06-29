@@ -19,7 +19,12 @@ description: "Things I've built and released — from recent experiments to past
 			{% endif %}
 			<article class="shipped-card">
 				<div class="shipped-card__header">
-					<h3 class="shipped-card__title">{{ project.data.title }}</h3>
+					<h3 class="shipped-card__title">
+						{{ project.data.title }}
+						{% if project.data.status == "in-progress" %}
+						<span class="shipped-card__badge shipped-card__badge--cooking">cooking</span>
+						{% endif %}
+					</h3>
 					<time class="shipped-card__date" datetime="{{ project.date | htmlDateString }}">{{ project.date | monthYearDate }}</time>
 				</div>
 				<p class="shipped-card__description">{{ project.data.description }}</p>
