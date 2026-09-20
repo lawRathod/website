@@ -1,23 +1,38 @@
+.about__hero {
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+	margin-bottom: 1.5rem;
+}
+
+.about__eyebrow {
+	color: var(--color-secondary);
+	margin-bottom: 0.5rem;
+}
+
 .about h1 {
-	margin-bottom: 2rem;
 	letter-spacing: -0.03em;
+	text-wrap: balance;
+}
+
+.about h2 {
+	margin-top: 2rem;
 }
 
 .about img {
 	border: 1px solid var(--border);
 	border-radius: var(--radius-lg);
-	float: none;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 0;
+	width: 160px;
+	aspect-ratio: 4 / 5;
+	object-fit: cover;
+	object-position: center 20%;
+	flex-shrink: 0;
 	box-shadow: var(--shadow-md);
 }
 
-@media (min-width: 35.9375em) {
-	.about img {
-		width: 200px;
-		float: right;
-		margin-left: 1.5rem;
-		margin-top: 0.5rem;
+@media (max-width: 35.9375em) {
+	.about__hero {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 }

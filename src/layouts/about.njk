@@ -3,7 +3,12 @@ layout: base.njk
 ---
 
 <div class="about">
-  <h1>About {{ name }}</h1>
-  <img src="{{ image | url }}" alt="" class="about__image">
+  <div class="about__hero">
+    <img src="{{ image | url }}" alt="Photo of {{ name }}" class="about__image">
+    <div>
+      <p class="about__eyebrow">Hey, I'm Prateek 👋</p>
+      <h1>I like figuring out how things work under the hood.</h1>
+    </div>
+  </div>
   {{ content | safe }}
 </div>
